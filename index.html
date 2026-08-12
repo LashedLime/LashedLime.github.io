@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Orvex Client – Custom Minecraft Launcher</title>
+    <title>Orvex Client</title>
     <link rel="icon" type="image/x-icon" href="icon.ico" />
     <!-- Font Awesome for icons (free) -->
     <link
@@ -236,6 +236,106 @@
             font-size: 0.95rem;
         }
 
+        /* ========== TEAM SECTION ========== */
+        .team {
+            padding: 70px 0 50px;
+            background: #14161c;
+        }
+
+        .team h2 {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #e8d5d8;
+        }
+        .team h2 span {
+            color: #30c7ba;
+        }
+
+        .team-sub {
+            text-align: center;
+            color: #b0b0b0;
+            margin-bottom: 40px;
+            font-size: 1.05rem;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 30px;
+            justify-items: center;
+        }
+
+        .team-card {
+            background: #1e1f26;
+            border-radius: 16px;
+            padding: 30px 20px 25px;
+            text-align: center;
+            width: 100%;
+            max-width: 260px;
+            border: 1px solid #2a2c36;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .team-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 28px rgba(0,0,0,0.5);
+        }
+
+        .team-avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin: 0 auto 16px;
+            overflow: hidden;
+            border: 2px solid #30c7ba;
+            background: #2a2c36;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .team-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* fallback if image missing */
+        .team-avatar .fallback-icon {
+            font-size: 3rem;
+            color: #30c7ba;
+        }
+
+        .team-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 4px;
+        }
+
+        .team-card .role {
+            font-size: 0.85rem;
+            color: #30c7ba;
+            font-weight: 500;
+            letter-spacing: 0.3px;
+            margin-bottom: 8px;
+        }
+
+        .team-card p {
+            color: #b0b0b0;
+            font-size: 0.9rem;
+            margin-bottom: 14px;
+        }
+
+        .team-social a {
+            color: #6b6f7a;
+            font-size: 1.2rem;
+            margin: 0 8px;
+            transition: color 0.2s;
+        }
+        .team-social a:hover {
+            color: #30c7ba;
+        }
+
         /* ========== STATUS / DEVELOPMENT NOTE ========== */
         .status-box {
             background: #1e1f26;
@@ -316,6 +416,9 @@
                 min-height: 100vh;
                 padding: 100px 20px 60px;
             }
+            .team-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -330,6 +433,7 @@
             </div>
             <nav>
                 <a href="#features">Features</a>
+                <a href="#team">Team</a>
                 <a href="#status">Status</a>
                 <a href="#download">Download</a>
                 <a href="#" target="_blank">
@@ -342,8 +446,6 @@
     <!-- ============ HERO (full viewport height) ============ -->
     <section class="hero">
         <div class="hero-content">
- 
-                
             <h1>A lightweight Minecraft launcher</h1>
             <p>
                 Orvex Client is a custom launcher for Minecraft Java Edition.
@@ -393,12 +495,45 @@
         </div>
     </section>
 
+    <!-- ============ TEAM SECTION ============ -->
+    <section class="team" id="team">
+        <div class="container">
+            <h2>Meet the <span>team</span></h2>
+            <p class="team-sub">The people behind Orvex Client</p>
+            <div class="team-grid">
+
+                <!-- Team member 1 with image -->
+                <div class="team-card">
+                    <div class="team-avatar">
+                        <!-- Replace src with your actual image path -->
+                        <img src="https://cdn.discordapp.com/avatars/1374683698376474675/10ab7bdda3a211a7bcbc0f5892bb81ac.webp" alt="Alex Rivera avatar" />
+                    </div>
+                    <h3>IlayHamood</h3>
+                    <div class="role">Lead Developer,<br>MacOS launcher developer,<br>Client mod developer</div>
+                </div>
+
+                <!-- Team member 2 with image -->
+                <div class="team-card">
+                    <div class="team-avatar">
+                        <!-- Replace src with your actual image path -->
+                        <img src="C#.png" alt="LashedLime" />
+                    </div>
+                    <h3>LashedLime</h3>
+                    <div class="role">Windows launcher developer,<br>Client mod developer,<br>Website developer</div>
+                </div>
+
+                <!-- You can add more team cards here later -->
+
+            </div>
+        </div>
+    </section>
+
     <!-- ============ STATUS / DEVELOPMENT NOTE ============ -->
     <section class="container" id="status">
         <div class="status-box">
             <i class="fas fa-code-branch"></i>
             <div>
-                <strong>🛠️ Development build</strong>
+                <strong>Development build</strong>
                 <p>
                     This launcher is actively being built. It works for local testing,
                     but the Microsoft API approval is still pending. Once approved,
@@ -424,39 +559,16 @@
             </span>
         </div>
         <p style="margin-top:16px; font-size:0.85rem; color:#6b6f7a;">
+            <!-- placeholder extra info -->
         </p>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
     </section>
 
     <!-- ============ FOOTER ============ -->
     <footer>
         <div class="container">
             <p>
-                Orvex Client · A personal Minecraft launcher project.
+                Orvex Client · A Minecraft launcher project.
                 Not affiliated with Mojang or Microsoft.
             </p>
             <p style="margin-top:6px;">
