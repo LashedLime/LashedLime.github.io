@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Privacy Policy – Orvex Client</title>
+    <link rel="icon" type="image/x-icon" href="icon.ico" />
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #14161c;
+            color: #e8d5d8;
+            line-height: 1.7;
+            padding: 40px 20px;
+        }
+        .container { max-width: 800px; margin: 0 auto; }
+        h1 {
+            font-size: 2rem;
+            color: #30c7ba;
+            margin-bottom: 8px;
+        }
+        .last-updated {
+            color: #6b6f7a;
+            font-size: 0.9rem;
+            margin-bottom: 30px;
+        }
+        h2 {
+            font-size: 1.3rem;
+            color: #30c7ba;
+            margin-top: 30px;
+            margin-bottom: 10px;
+        }
+        p, li { color: #b0b0b0; margin-bottom: 12px; }
+        ul { padding-left: 24px; margin-bottom: 12px; }
+        a { color: #30c7ba; text-decoration: none; }
+        a:hover { color: #1e746f; }
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+        footer {
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid #25282e;
+            color: #6b6f7a;
+            font-size: 0.9rem;
+            text-align: center;
+        }
+        .highlight {
+            background: #1e1f26;
+            border-left: 4px solid #30c7ba;
+            padding: 15px 20px;
+            border-radius: 6px;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-link">← Back to Orvex Client</a>
+
+        <h1>Privacy Policy</h1>
+        <p class="last-updated">Last updated: August 2026</p>
+
+        <div class="highlight">
+            <p><strong>Short version:</strong> Orvex Client does not collect, store, or share any personal data. Your Microsoft password never touches our launcher. All authentication is handled directly by Microsoft.</p>
+        </div>
+
+        <h2>1. Information We Do NOT Collect</h2>
+        <p>
+            Orvex Client does <strong>not</strong> collect, store, or transmit any of the following:
+        </p>
+        <ul>
+            <li>Your Microsoft account email or password</li>
+            <li>Your Minecraft username, UUID, or access token (except locally, to launch the game)</li>
+            <li>Your IP address</li>
+            <li>Your hardware information</li>
+            <li>Your gameplay statistics or server activity</li>
+        </ul>
+
+        <h2>2. Authentication</h2>
+        <p>
+            Authentication is performed entirely through Microsoft's official OAuth 2.0 login page. When you sign in, you are redirected to Microsoft's servers, where you enter your credentials. Orvex Client never sees your password.
+        </p>
+        <p>
+            After a successful login, Microsoft provides the Launcher with temporary access tokens. These tokens are stored <strong>locally on your computer</strong> (in your launcher's config folder) so that you do not need to sign in every time. They are never sent to any server owned by the Orvex Client team.
+        </p>
+
+        <h2>3. Local Data Storage</h2>
+        <p>
+            The Launcher stores the following data on your local machine only:
+        </p>
+        <ul>
+            <li>Your Microsoft access token and refresh token (encrypted by MSAL)</li>
+            <li>Your launcher settings (Java path, memory allocation, etc.)</li>
+            <li>Your mod configuration (module states, keybinds)</li>
+        </ul>
+        <p>
+            This data never leaves your computer.
+        </p>
+
+        <h2>4. Third-Party Services</h2>
+        <p>
+            Orvex Client communicates only with the following official services:
+        </p>
+        <ul>
+            <li><strong>Microsoft Identity Platform</strong> (login.microsoftonline.com) – for authentication</li>
+            <li><strong>Xbox Live</strong> (xboxlive.com) – for account verification</li>
+            <li><strong>Minecraft Services API</strong> (api.minecraftservices.com) – for game launch tokens</li>
+            <li><strong>Mojang Resources</strong> (resources.download.minecraft.net) – for downloading game assets</li>
+        </ul>
+        <p>
+            We do not integrate with any analytics, advertising, or tracking services.
+        </p>
+
+        <h2>5. Data Deletion</h2>
+        <p>
+            You can delete all locally stored data at any time by:
+        </p>
+        <ul>
+            <li>Using the "Logout" button in the Launcher (removes tokens)</li>
+            <li>Deleting the launcher's config folder (%AppData%\OrvexClient)</li>
+        </ul>
+
+        <h2>6. Children's Privacy</h2>
+        <p>
+            Orvex Client does not knowingly collect any information from anyone. It is suitable for all ages.
+        </p>
+
+        <h2>7. Changes to This Policy</h2>
+        <p>
+            We may update this Privacy Policy from time to time. Any changes will be posted on this page.
+        </p>
+
+        <h2>8. Contact</h2>
+        <p>
+            For questions about this Privacy Policy, please open an issue on our <a href="https://github.com/LashedLime" target="_blank">GitHub repository</a>.
+        </p>
+
+        <footer>
+            Orvex Client · Not affiliated with Mojang or Microsoft.
+        </footer>
+    </div>
+</body>
+</html>
