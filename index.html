@@ -1,197 +1,722 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2321805464509171"
-     crossorigin="anonymous"></script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Orvex Client</title>
     <link rel="icon" type="image/x-icon" href="icon.ico" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
     <style>
+        /* ============================================================
+           DESIGN TOKENS — high-contrast variant of launcher palette
+           ============================================================ */
+        :root {
+            --bg-window:      #14161c;
+            --bg-surface:     #1a1c22;
+            --bg-surface-alt: #1e1f26;
+            --bg-elevated:    #23252d;
+            --bg-hover:       #2a2d36;
+
+            --border-subtle:  #2e3138;
+            --border-strong:  #3a3d47;
+
+            --accent:         #30c7ba;
+            --accent-dark:    #1e746f;
+            --accent-hover:   #00D4B8;
+            --accent-press:   #165d59;
+
+            --text-primary:   #F0DDE0;
+            --text-body:      #C9C4D0;
+            --text-muted:     #A5A3B0;
+            --text-dim:       #8A8D99;
+
+            --danger:         #d96b6b;
+            --warning:        #f0b429;
+
+            --radius-card:    8px;
+            --radius-button:  6px;
+
+            --max-width:      1100px;
+        }
+
+        /* ============================================================
+           BASE
+           ============================================================ */
         * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
         html, body { height: 100%; }
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #14161c;
-            color: #e8d5d8;
+            background-color: var(--bg-window);
+            color: var(--text-body);
             line-height: 1.6;
             display: flex;
             flex-direction: column;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
-        a { color: #30c7ba; text-decoration: none; }
-        a:hover { color: #1e746f; }
-        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+        a { color: var(--accent); text-decoration: none; transition: color 0.2s; }
+        a:hover { color: var(--accent-hover); }
+        .container { max-width: var(--max-width); margin: 0 auto; padding: 0 24px; }
+        code {
+            background: var(--bg-surface-alt);
+            border: 1px solid var(--border-subtle);
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-family: 'Consolas', 'Courier New', monospace;
+            font-size: 0.85em;
+            color: var(--accent);
+            font-weight: 600;
+        }
 
+        /* ============================================================
+           HEADER
+           ============================================================ */
+        .top-stripe {
+            background: var(--accent);
+            height: 3px;
+            width: 100%;
+        }
         header {
-            background: #1e1f26;
-            border-bottom: 2px solid #30c7ba;
-            padding: 18px 0;
+            background: var(--bg-surface);
+            border-bottom: 1px solid var(--border-subtle);
+            padding: 14px 0;
             position: sticky;
             top: 0;
-            z-index: 10;
+            z-index: 100;
         }
         header .container {
             display: flex;
             justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
+            gap: 16px;
         }
         .logo {
             display: flex;
             align-items: center;
             gap: 10px;
-            font-size: 1.6rem;
+            font-size: 1.15rem;
             font-weight: 700;
-            color: #e8d5d8;
+            color: var(--text-primary);
+            letter-spacing: 0.2px;
         }
-        .logo img { height: 2.2rem; width: auto; }
-        nav a { margin-left: 28px; font-weight: 500; color: #b0b0b0; transition: color 0.2s; }
-        nav a:hover { color: #30c7ba; }
+        .logo img { height: 28px; width: 28px; border-radius: 6px; }
+        nav { display: flex; align-items: center; gap: 4px; }
+        nav a {
+            color: var(--text-muted);
+            font-weight: 600;
+            font-size: 0.9rem;
+            padding: 8px 14px;
+            border-radius: var(--radius-button);
+            transition: background 0.15s, color 0.15s;
+        }
+        nav a:hover {
+            color: var(--accent);
+            background: var(--bg-hover);
+        }
 
+        /* ============================================================
+           HERO
+           ============================================================ */
         .hero {
             min-height: 100vh;
+            padding: 100px 24px 60px;
+            text-align: center;
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 80px 20px 60px;
-            text-align: center;
-            flex: 1;
+            position: relative;
+            overflow: hidden;
         }
-        .hero-content { max-width: 800px; }
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: -300px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(48, 199, 186, 0.10) 0%, transparent 60%);
+            pointer-events: none;
+        }
+        .hero-content { max-width: 760px; position: relative; z-index: 1; }
+        .badge {
+            display: inline-block;
+            background: var(--bg-surface-alt);
+            border: 1px solid var(--border-strong);
+            color: var(--accent);
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 6px 14px;
+            border-radius: 20px;
+            letter-spacing: 0.8px;
+            text-transform: uppercase;
+            margin-bottom: 24px;
+        }
         .hero h1 {
-            font-size: 3.6rem;
+            font-size: 3.4rem;
             font-weight: 800;
-            margin-bottom: 16px;
-            background: linear-gradient(135deg, #30c7ba 0%, #1e746f 100%);
+            line-height: 1.15;
+            margin-bottom: 20px;
+            color: var(--text-primary);
+            letter-spacing: -0.02em;
+        }
+        .hero h1 .accent {
+            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
-        .hero p { font-size: 1.2rem; color: #b0b0b0; max-width: 700px; margin: 0 auto 30px; }
+        .hero p {
+            font-size: 1.15rem;
+            color: var(--text-body);
+            max-width: 600px;
+            margin: 0 auto 36px;
+        }
+        .hero-actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+
+        /* ============================================================
+           BUTTONS
+           ============================================================ */
         .btn {
-            display: inline-block;
-            background: #30c7ba;
-            color: #14161c;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--accent);
+            color: var(--bg-window) !important;
             font-weight: 700;
-            padding: 14px 44px;
-            border-radius: 40px;
-            font-size: 1.1rem;
-            transition: background 0.25s;
-            border: none;
+            font-size: 0.95rem;
+            padding: 0 28px;
+            height: 46px;
+            border-radius: var(--radius-button);
+            border: 1px solid var(--accent);
             cursor: pointer;
+            transition: background 0.2s, color 0.2s, border-color 0.2s;
+            text-decoration: none;
         }
-        .btn:hover { background: #1e746f; color: #fff; }
-        .btn i { margin-right: 8px; }
-        .btn-outline { background: transparent; color: #30c7ba; border: 2px solid #30c7ba; }
-        .btn-outline:hover { background: #30c7ba; color: #14161c; }
+        .btn:hover {
+            background: var(--accent-hover);
+            border-color: var(--accent-hover);
+            color: var(--bg-window) !important;
+        }
+        .btn:active {
+            background: var(--accent-dark);
+            border-color: var(--accent-dark);
+            color: #ffffff !important;
+        }
+        .btn-outline {
+            background: transparent;
+            color: var(--text-body) !important;
+            border: 1px solid var(--border-strong);
+        }
+        .btn-outline:hover {
+            background: var(--bg-hover);
+            color: var(--accent) !important;
+            border-color: var(--accent);
+        }
 
-        .features { padding: 70px 0 50px; background: #0f1014; }
-        .features h2 { text-align: center; font-size: 2rem; margin-bottom: 40px; color: #e8d5d8; }
-        .features h2 span { color: #30c7ba; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
+        /* ============================================================
+           SECTION HEADERS
+           ============================================================ */
+        .section-header { margin-bottom: 48px; }
+        .section-header.centered { text-align: center; }
+        .section-header h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+            letter-spacing: -0.01em;
+        }
+        .section-header h2 .accent { color: var(--accent); }
+        .section-header p {
+            color: var(--text-body);
+            font-size: 1rem;
+        }
+        .accent-divider {
+            display: block;
+            width: 40px;
+            height: 3px;
+            background: var(--accent);
+            border-radius: 2px;
+            margin-top: 14px;
+        }
+        .section-header.centered .accent-divider {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* ============================================================
+           FEATURES
+           ============================================================ */
+        .features {
+            padding: 96px 0;
+            background: var(--bg-surface);
+            border-top: 1px solid var(--border-subtle);
+            border-bottom: 1px solid var(--border-subtle);
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+        }
         .card {
-            background: #1e1f26;
-            padding: 28px 22px;
-            border-radius: 12px;
-            border-left: 4px solid #30c7ba;
-            transition: box-shadow 0.2s;
+            background: var(--bg-surface-alt);
+            padding: 28px 24px;
+            border-radius: var(--radius-card);
+            border: 1px solid var(--border-subtle);
+            transition: border-color 0.2s, transform 0.2s;
         }
-        .card:hover { box-shadow: 0 8px 24px rgba(48, 199, 186, 0.08); }
-        .card i { font-size: 2.2rem; color: #30c7ba; margin-bottom: 12px; }
-        .card h3 { font-size: 1.2rem; margin-bottom: 6px; }
-        .card p { color: #b0b0b0; font-size: 0.95rem; }
+        .card:hover {
+            border-color: var(--accent);
+            transform: translateY(-2px);
+        }
+        .card i {
+            font-size: 1.6rem;
+            color: var(--accent);
+            margin-bottom: 16px;
+            display: block;
+        }
+        .card h3 {
+            font-size: 1.05rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: var(--text-primary);
+        }
+        .card p {
+            color: var(--text-body);
+            font-size: 0.9rem;
+            line-height: 1.55;
+        }
 
-        .team { padding: 70px 0 50px; background: #14161c; }
-        .team h2 { text-align: center; font-size: 2rem; margin-bottom: 20px; color: #e8d5d8; }
-        .team h2 span { color: #30c7ba; }
-        .team-sub { text-align: center; color: #b0b0b0; margin-bottom: 40px; font-size: 1.05rem; }
+        /* ============================================================
+           TEAM
+           ============================================================ */
+        .team { padding: 96px 0; }
         .team-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 30px;
+            gap: 24px;
             justify-items: center;
+            max-width: 640px;
+            margin: 0 auto;
         }
         .team-card {
-            background: #1e1f26;
-            border-radius: 16px;
-            padding: 30px 20px 25px;
+            background: var(--bg-surface-alt);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-card);
+            padding: 32px 24px 28px;
             text-align: center;
             width: 100%;
-            max-width: 260px;
-            border: 1px solid #2a2c36;
-            transition: transform 0.2s, box-shadow 0.2s;
+            max-width: 280px;
+            transition: border-color 0.2s, transform 0.2s;
         }
-        .team-card:hover { transform: translateY(-4px); box-shadow: 0 12px 28px rgba(0,0,0,0.5); }
+        .team-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-2px);
+        }
         .team-avatar {
-            width: 100px;
-            height: 100px;
+            width: 96px;
+            height: 96px;
             border-radius: 50%;
-            margin: 0 auto 16px;
+            margin: 0 auto 18px;
             overflow: hidden;
-            border: 2px solid #30c7ba;
-            background: #2a2c36;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            border: 2px solid var(--accent);
+            background: var(--bg-window);
         }
         .team-avatar img { width: 100%; height: 100%; object-fit: cover; display: block; }
-        .team-card h3 { font-size: 1.3rem; margin-bottom: 4px; }
-        .team-card .role { font-size: 0.85rem; color: #30c7ba; font-weight: 500; margin-bottom: 8px; }
+        .team-card h3 {
+            font-size: 1.15rem;
+            font-weight: 700;
+            margin-bottom: 6px;
+            color: var(--text-primary);
+        }
+        .team-card .role {
+            font-size: 0.85rem;
+            color: var(--text-body);
+            line-height: 1.5;
+        }
 
+        /* ============================================================
+           STATUS
+           ============================================================ */
+        .status-section { padding: 0 0 96px; }
         .status-box {
-            background: #1e1f26;
-            border: 1px solid #2a2c36;
-            border-radius: 12px;
-            padding: 28px 30px;
-            margin: 40px 0 20px;
+            background: var(--bg-surface-alt);
+            border: 1px solid var(--border-subtle);
+            border-left: 3px solid var(--warning);
+            border-radius: var(--radius-card);
+            padding: 24px 28px;
             display: flex;
             align-items: flex-start;
             gap: 18px;
         }
-        .status-box i { font-size: 2rem; color: #f0b429; margin-top: 2px; }
-        .status-box strong { color: #e8d5d8; }
-        .status-box p { color: #b0b0b0; font-size: 0.95rem; }
-
-        .download-section { text-align: center; padding: 60px 0 70px; }
-        .download-section h2 { font-size: 1.8rem; margin-bottom: 10px; }
-        .download-section p { color: #b0b0b0; margin-bottom: 24px; }
-        .btn-download {
-            display: inline-block;
-            background: #30c7ba;
-            color: #14161c;
-            font-weight: 700;
-            padding: 14px 44px;
-            border-radius: 40px;
-            font-size: 1.1rem;
-            border: none;
-            cursor: pointer;
+        .status-box i {
+            font-size: 1.5rem;
+            color: var(--warning);
+            margin-top: 2px;
+        }
+        .status-box strong {
+            display: block;
+            color: var(--text-primary);
+            font-size: 1rem;
+            margin-bottom: 6px;
+        }
+        .status-box p {
+            color: var(--text-body);
+            font-size: 0.92rem;
         }
 
+        /* ============================================================
+           DOWNLOAD SECTION
+           ============================================================ */
+        .download-section {
+            min-height: 100vh;
+            padding: 100px 24px 80px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: var(--bg-surface);
+            border-top: 1px solid var(--border-subtle);
+            border-bottom: 1px solid var(--border-subtle);
+            position: relative;
+            overflow: hidden;
+        }
+        .download-section::before {
+            content: "";
+            position: absolute;
+            bottom: -400px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 900px;
+            height: 900px;
+            background: radial-gradient(circle, rgba(48, 199, 186, 0.08) 0%, transparent 60%);
+            pointer-events: none;
+        }
+        .download-inner {
+            position: relative;
+            z-index: 1;
+            max-width: 780px;
+            width: 100%;
+        }
+        .download-section h2 {
+            font-size: 2.6rem;
+            font-weight: 800;
+            color: var(--text-primary);
+            margin-bottom: 14px;
+            letter-spacing: -0.02em;
+        }
+        .download-section h2 .accent { color: var(--accent); }
+        .download-section .download-lead {
+            font-size: 1.1rem;
+            color: var(--text-body);
+            max-width: 580px;
+            margin: 0 auto 40px;
+        }
+
+        /* ============================================================
+           SPLIT PILL DOWNLOAD BUTTON
+           ============================================================ */
+        .download-cta-wrapper {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 22px;
+            position: relative;
+            z-index: 30;
+        }
+
+        .download-pill {
+            display: inline-flex;
+            align-items: stretch;
+            background: var(--accent);
+            border-radius: 999px;
+            overflow: visible;
+            box-shadow: 0 10px 32px rgba(48, 199, 186, 0.25);
+            transition: box-shadow 0.3s ease;
+        }
+        .download-pill:hover {
+            box-shadow: 0 16px 44px rgba(48, 199, 186, 0.35);
+        }
+
+        /* Kill global a:hover inside the pill — keeps dark text at all times */
+        .download-pill a,
+        .download-pill a:link,
+        .download-pill a:visited,
+        .download-pill a:hover,
+        .download-pill a:active,
+        .download-pill a:focus {
+            color: var(--bg-window);
+            text-decoration: none;
+        }
+
+        /* Left side: Download */
+        .download-pill-main {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px 44px;
+            font-size: 1.15rem;
+            font-weight: 800;
+            letter-spacing: 0.2px;
+            white-space: nowrap;
+            border-radius: 999px 0 0 999px;
+            transition: background 0.2s ease;
+        }
+        .download-pill-main:hover {
+            background: var(--accent-hover);
+        }
+
+        /* Vertical divider */
+        .download-pill-divider {
+            width: 1px;
+            background: rgba(20, 22, 28, 0.35);
+            align-self: stretch;
+        }
+
+        /* Right side: .exe (Windows) with chevron */
+        .download-pill-alt {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 14px;
+            padding: 20px 40px;
+            font-size: 1.15rem;
+            font-weight: 700;
+            white-space: nowrap;
+            border-radius: 0 999px 999px 0;
+            transition: background 0.2s ease;
+        }
+        .download-pill-alt:hover {
+            background: var(--accent-hover);
+        }
+        .download-pill-alt .chevron {
+            font-size: 0.85rem;
+            transition: transform 0.25s ease;
+        }
+        .download-dropdown:hover .download-pill-alt .chevron {
+            transform: rotate(180deg);
+        }
+
+        /* Dropdown wrapper */
+        .download-dropdown {
+            position: relative;
+            display: flex;
+        }
+
+        /* Dropdown menu — elevated, high contrast, with hover bridge */
+        .download-dropdown-menu {
+            position: absolute;
+            top: calc(100% + 10px);
+            right: 0;
+            background: var(--bg-elevated);
+            border: 1px solid var(--border-strong);
+            border-radius: 10px;
+            overflow: visible;
+            min-width: 300px;
+            box-shadow:
+                0 20px 48px rgba(0, 0, 0, 0.7),
+                0 0 0 1px rgba(48, 199, 186, 0.12),
+                0 2px 8px rgba(0, 0, 0, 0.4);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-6px);
+            transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
+            z-index: 200;
+            padding: 6px;
+        }
+        /* Invisible bridge so the cursor can travel from the pill to the menu */
+        .download-dropdown-menu::before {
+            content: "";
+            position: absolute;
+            top: -10px;
+            left: 0;
+            right: 0;
+            height: 10px;
+        }
+        .download-dropdown:hover .download-dropdown-menu,
+        .download-dropdown-menu:hover {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        /* Dropdown items */
+        .download-dropdown-item,
+        .download-dropdown-item:link,
+        .download-dropdown-item:visited,
+        .download-dropdown-item:focus {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 12px 16px;
+            color: var(--text-primary);
+            font-size: 0.95rem;
+            font-weight: 600;
+            border-radius: 6px;
+            transition: background 0.15s ease, color 0.15s ease;
+            text-align: left;
+            text-decoration: none;
+            outline: none;
+        }
+        .download-dropdown-item + .download-dropdown-item {
+            margin-top: 2px;
+        }
+        .download-dropdown-item:hover {
+            background: var(--accent);
+            color: var(--bg-window) !important;
+        }
+        .download-dropdown-item:hover i {
+            color: var(--bg-window) !important;
+        }
+        .download-dropdown-item:hover .meta,
+        .download-dropdown-item:hover .disabled-tag {
+            color: rgba(20, 22, 28, 0.75) !important;
+        }
+        .download-dropdown-item i {
+            font-size: 1.2rem;
+            color: var(--accent);
+            width: 24px;
+            text-align: center;
+            transition: color 0.15s ease;
+            flex-shrink: 0;
+        }
+        .download-dropdown-item .meta {
+            color: var(--text-dim);
+            font-size: 0.8rem;
+            margin-left: auto;
+            font-weight: 600;
+            letter-spacing: 0.02em;
+            transition: color 0.15s ease;
+        }
+        .download-dropdown-item .disabled-tag {
+            color: var(--text-dim);
+            font-size: 0.72rem;
+            margin-left: auto;
+            font-weight: 700;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            transition: color 0.15s ease;
+        }
+
+        .download-note {
+            font-size: 0.88rem;
+            color: var(--text-dim);
+            margin-bottom: 56px;
+            font-weight: 500;
+        }
+
+        /* ---- Info cards under the button ---- */
+        .download-info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 16px;
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: left;
+        }
+        .download-info {
+            background: var(--bg-surface-alt);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-card);
+            padding: 22px 22px;
+            transition: border-color 0.2s;
+        }
+        .download-info:hover {
+            border-color: var(--border-strong);
+        }
+        .download-info i {
+            font-size: 1.3rem;
+            color: var(--accent);
+            margin-bottom: 12px;
+            display: block;
+        }
+        .download-info h3 {
+            font-size: 0.98rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+        .download-info p {
+            color: var(--text-body);
+            font-size: 0.88rem;
+            line-height: 1.55;
+        }
+
+        /* ============================================================
+           FOOTER
+           ============================================================ */
         footer {
             margin-top: auto;
-            background: #0f1014;
-            padding: 28px 0;
-            border-top: 1px solid #25282e;
+            background: var(--bg-window);
+            padding: 32px 0;
             text-align: center;
-            font-size: 0.9rem;
-            color: #6b6f7a;
+            font-size: 0.88rem;
+            color: var(--text-dim);
         }
-        footer a { color: #6b6f7a; }
-        footer a:hover { color: #30c7ba; }
+        footer a { color: var(--text-muted); font-weight: 500; }
+        footer a:hover { color: var(--accent); }
+        footer .footer-links {
+            margin-top: 8px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
 
-        @media (max-width: 600px) {
-            .hero h1 { font-size: 2.4rem; }
+        /* ============================================================
+           RESPONSIVE
+           ============================================================ */
+        @media (max-width: 720px) {
+            .download-pill {
+                flex-direction: column;
+                border-radius: 20px;
+                width: 100%;
+                max-width: 320px;
+            }
+            .download-pill-divider {
+                width: auto;
+                height: 1px;
+            }
+            .download-pill-main,
+            .download-pill-alt {
+                padding: 16px 24px;
+                font-size: 1rem;
+            }
+            .download-pill-main { border-radius: 20px 20px 0 0; }
+            .download-pill-alt  { border-radius: 0 0 20px 20px; }
+            .download-dropdown { width: 100%; }
+            .download-dropdown-menu {
+                right: auto;
+                left: 50%;
+                transform: translate(-50%, -6px);
+                min-width: 280px;
+            }
+            .download-dropdown:hover .download-dropdown-menu,
+            .download-dropdown-menu:hover {
+                transform: translate(-50%, 0);
+            }
+        }
+
+        @media (max-width: 640px) {
+            .hero { padding: 80px 20px 60px; }
+            .hero h1 { font-size: 2.2rem; }
             .hero p { font-size: 1rem; }
-            header .container { flex-direction: column; gap: 12px; }
-            nav a { margin: 0 12px; font-size: 0.95rem; }
-            .status-box { flex-direction: column; align-items: center; text-align: center; }
-            .hero { min-height: 100vh; padding: 100px 20px 60px; }
+            header .container { flex-direction: column; }
+            nav { flex-wrap: wrap; justify-content: center; }
+            .section-header h2 { font-size: 1.6rem; }
+            .download-section { padding: 80px 20px 60px; }
+            .download-section h2 { font-size: 2rem; }
             .team-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
 
+    <div class="top-stripe"></div>
+
+    <!-- ==================== HEADER ==================== -->
     <header>
         <div class="container">
             <div class="logo">
@@ -201,7 +726,6 @@
             <nav>
                 <a href="#features">Features</a>
                 <a href="#team">Team</a>
-                <a href="#status">Status</a>
                 <a href="#download">Download</a>
                 <a href="https://github.com/LashedLime" target="_blank">
                     <i class="fab fa-github"></i> Source
@@ -210,118 +734,181 @@
         </div>
     </header>
 
+    <!-- ==================== HERO ==================== -->
     <section class="hero">
         <div class="hero-content">
-            <h1>A lightweight Minecraft launcher</h1>
+            <div class="badge">Early Access · v1.0</div>
+            <h1>A lightweight Minecraft <span class="accent">launcher</span></h1>
             <p>
-                Orvex Client is a custom launcher for Minecraft Java Edition.
-                It handles secure authentication, launches the game with
-                your mods, and stays out of your way.
+                Orvex Client handles secure Microsoft authentication, keeps your
+                game files isolated, and launches Minecraft with your mods —
+                without ever touching your existing <code>.minecraft</code> folder.
             </p>
-            <a href="#download" class="btn">
-                <i class="fas fa-download"></i> Download (soon)
-            </a>
-            <a href="#features" class="btn btn-outline" style="margin-left:12px;">
-                <i class="fas fa-info-circle"></i> Learn more
-            </a>
+            <div class="hero-actions">
+                <a href="#download" class="btn">
+                    <i class="fas fa-download"></i> Download
+                </a>
+                <a href="#features" class="btn btn-outline">
+                    <i class="fas fa-info-circle"></i> Learn more
+                </a>
+            </div>
         </div>
     </section>
 
+    <!-- ==================== FEATURES ==================== -->
     <section class="features" id="features">
         <div class="container">
-            <h2>What it <span>does</span></h2>
+            <div class="section-header centered">
+                <h2>What it <span class="accent">does</span></h2>
+                <p>A lean launcher that stays out of your way</p>
+                <span class="accent-divider"></span>
+            </div>
             <div class="grid">
                 <div class="card">
-                    <i class="fas fa-user-lock"></i>
-                    <h3>Secure login</h3>
-                    <p>Sign in securely with your Microsoft / Xbox account. Passwords never touch the launcher.</p>
+                    <i class="fas fa-shield-halved"></i>
+                    <h3>Secure sign-in</h3>
+                    <p>Sign in with your Microsoft / Xbox account through an embedded browser. Your password never touches the launcher.</p>
                 </div>
                 <div class="card">
-                    <i class="fas fa-cogs"></i>
-                    <h3>Fabric ready</h3>
-                    <p>Detects your installed Fabric loader and launches it with the correct Java arguments.</p>
+                    <i class="fas fa-box"></i>
+                    <h3>Fully self-contained</h3>
+                    <p>Owns its game directory. Downloads Minecraft, Fabric, assets, and the correct Java runtime automatically — no interference with your existing setup.</p>
                 </div>
                 <div class="card">
                     <i class="fas fa-gamepad"></i>
-                    <h3>Built-in mods</h3>
-                    <p>Comes with a custom Minecraft mod featuring a click GUI, toggle sprint, full bright, and more modules – just like other clients.</p>
+                    <h3>Built-in client mod</h3>
+                    <p>Ships with our own Fabric client mod — click GUI, toggle sprint, full bright, zoom, and more, styled to match the launcher.</p>
                 </div>
                 <div class="card">
-                    <i class="fas fa-folder-open"></i>
-                    <h3>Uses .minecraft</h3>
-                    <p>Works with your existing .minecraft folder. No separate installation required.</p>
+                    <i class="fas fa-wrench"></i>
+                    <h3>One-click repair</h3>
+                    <p>If anything goes missing or corrupts, a single button re-downloads exactly what's needed. No manual file surgery.</p>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- ==================== TEAM ==================== -->
     <section class="team" id="team">
         <div class="container">
-            <h2>Meet the <span>team</span></h2>
-            <p class="team-sub">The people behind Orvex Client</p>
+            <div class="section-header centered">
+                <h2>Meet the <span class="accent">team</span></h2>
+                <p>Two developers, one launcher</p>
+                <span class="accent-divider"></span>
+            </div>
             <div class="team-grid">
                 <div class="team-card">
                     <div class="team-avatar">
                         <img src="https://cdn.discordapp.com/avatars/1374683698376474675/10ab7bdda3a211a7bcbc0f5892bb81ac.webp" alt="IlayHamood" />
                     </div>
                     <h3>IlayHamood</h3>
-                    <div class="role">Lead Developer,<br>MacOS launcher developer,<br>Client mod developer</div>
+                    <div class="role">Lead Developer<br>macOS launcher<br>Client mod</div>
                 </div>
                 <div class="team-card">
                     <div class="team-avatar">
                         <img src="csharp.png" alt="LashedLime" />
                     </div>
                     <h3>LashedLime</h3>
-                    <div class="role">Windows launcher developer,<br>Client mod developer,<br>Website developer</div>
+                    <div class="role">Windows launcher<br>Client mod<br>Website</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="container" id="status">
-        <div class="status-box">
-            <i class="fas fa-code-branch"></i>
-            <div>
-                <strong>Development build</strong>
-                <p>
-                    This launcher is actively being built. It works for local testing,
-                    but the Microsoft API approval is still pending. Once approved,
-                    you'll be able to log in with your real Minecraft account.
-                </p>
+    <!-- ==================== STATUS ==================== -->
+    <section class="status-section">
+        <div class="container">
+            <div class="status-box">
+                <i class="fas fa-circle-info"></i>
+                <div>
+                    <strong>Early Access</strong>
+                    <p>
+                        Orvex Client is fully functional today — you can sign in,
+                        install Minecraft and Fabric automatically, and launch the
+                        game with your mods. macOS support is in development.
+                    </p>
+                </div>
             </div>
         </div>
     </section>
 
-    <section class="download-section container" id="download">
-        <h2>Get Orvex Client</h2>
-        <p>
-            The launcher is currently in active development.
-            A public release will be available when the Microsoft API review is complete.
-        </p>
-        <div style="display:flex; justify-content:center; gap:16px; flex-wrap:wrap;">
-            <span class="btn-download" style="opacity:0.6; cursor:default;">
-                <i class="fa-brands fa-windows"></i> Coming soon
-            </span>
-            <span class="btn-download" style="opacity:0.6; cursor:default;">
-                <i class="fa-brands fa-apple"></i> Coming soon
-            </span>
+    <!-- ==================== DOWNLOAD ==================== -->
+    <section class="download-section" id="download">
+        <div class="download-inner">
+            <div class="section-header centered">
+                <h2>Get <span class="accent">Orvex Client</span></h2>
+                <p class="download-lead">
+                    One launcher that handles everything — authentication, Minecraft installation,
+                    Fabric mod loader, Java runtime, and mod management. No manual setup required.
+                </p>
+                <span class="accent-divider"></span>
+            </div>
+
+            <!-- Split pill button with dropdown -->
+            <div class="download-cta-wrapper">
+                <div class="download-pill">
+                    <a href="#" class="download-pill-main">Download</a>
+                    <div class="download-pill-divider"></div>
+                    <div class="download-dropdown">
+                        <a href="#" class="download-pill-alt">
+                            .exe (Windows)
+                            <i class="fas fa-chevron-down chevron"></i>
+                        </a>
+                        <div class="download-dropdown-menu">
+                            <a href="#" class="download-dropdown-item">
+                                <i class="fa-brands fa-windows"></i>
+                                <span>.exe (Windows)</span>
+                                <span class="meta">v1.0.0 · ~45 MB</span>
+                            </a>
+                            <a href="#" class="download-dropdown-item">
+                                <i class="fa-brands fa-apple"></i>
+                                <span>.dmg (macOS)</span>
+                                <span class="disabled-tag">Coming soon</span>
+                            </a>
+                            <a href="https://github.com/LashedLime" target="_blank" class="download-dropdown-item">
+                                <i class="fab fa-github"></i>
+                                <span>Source code</span>
+                                <span class="meta">GitHub</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <p class="download-note">
+                Windows 10 / 11 · 64-bit · No installer required
+            </p>
+
+            <!-- Info cards -->
+            <div class="download-info-grid">
+                <div class="download-info">
+                    <i class="fas fa-bolt"></i>
+                    <h3>Instant setup</h3>
+                    <p>Sign in once and the launcher handles everything. Minecraft, Fabric, and Java are downloaded automatically the first time you click Play.</p>
+                </div>
+                <div class="download-info">
+                    <i class="fas fa-hard-drive"></i>
+                    <h3>Isolated &amp; clean</h3>
+                    <p>Everything lives in <code>%AppData%\.orvex</code>. Your existing <code>.minecraft</code> folder is left completely untouched.</p>
+                </div>
+                <div class="download-info">
+                    <i class="fas fa-shield-halved"></i>
+                    <h3>No telemetry</h3>
+                    <p>Zero analytics, zero data collection. Your account tokens are stored locally and never leave your machine.</p>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- ============ FOOTER ============ -->
+    <!-- ==================== FOOTER ==================== -->
     <footer>
         <div class="container">
-            <p>
-                Orvex Client · A Minecraft launcher project.
-                Not affiliated with Mojang or Microsoft.
-            </p>
-            <p style="margin-top:6px;">
+            <p>Orvex Client · Not affiliated with Mojang or Microsoft.</p>
+            <div class="footer-links">
                 <a href="https://github.com/LashedLime" target="_blank">GitHub</a>
-                &nbsp;·&nbsp;
                 <a href="terms.html">Terms of Service</a>
-                &nbsp;·&nbsp;
                 <a href="privacy.html">Privacy Policy</a>
-            </p>
+            </div>
         </div>
     </footer>
 
