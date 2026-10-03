@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
     <style>
         /* ============================================================
-           DESIGN TOKENS — high-contrast variant of launcher palette
+           DESIGN TOKENS — mirrors the launcher exactly
            ============================================================ */
         :root {
             --bg-window:      #14161c;
@@ -140,7 +140,7 @@
             background: radial-gradient(circle, rgba(48, 199, 186, 0.10) 0%, transparent 60%);
             pointer-events: none;
         }
-        .hero-content { max-width: 760px; position: relative; z-index: 1; }
+        .hero-content { max-width: 780px; position: relative; z-index: 1; }
         .badge {
             display: inline-block;
             background: var(--bg-surface-alt);
@@ -171,10 +171,17 @@
         .hero p {
             font-size: 1.15rem;
             color: var(--text-body);
-            max-width: 600px;
+            max-width: 620px;
             margin: 0 auto 36px;
         }
         .hero-actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+
+        .hero-subtle {
+            font-size: 0.8rem;
+            color: var(--text-dim);
+            margin-top: 20px;
+            font-style: italic;
+        }
 
         /* ============================================================
            BUTTONS
@@ -288,6 +295,13 @@
             font-size: 0.9rem;
             line-height: 1.55;
         }
+        .card .footnote {
+            display: block;
+            font-size: 0.72rem;
+            color: var(--text-dim);
+            margin-top: 10px;
+            font-style: italic;
+        }
 
         /* ============================================================
            TEAM
@@ -336,6 +350,14 @@
             color: var(--text-body);
             line-height: 1.5;
         }
+        .team-card .tagline {
+            font-size: 0.75rem;
+            color: var(--text-dim);
+            font-style: italic;
+            margin-top: 10px;
+            padding-top: 10px;
+            border-top: 1px solid var(--border-subtle);
+        }
 
         /* ============================================================
            STATUS
@@ -366,6 +388,7 @@
             color: var(--text-body);
             font-size: 0.92rem;
         }
+        .status-box p + p { margin-top: 8px; }
 
         /* ============================================================
            DOWNLOAD SECTION
@@ -440,7 +463,6 @@
             box-shadow: 0 16px 44px rgba(48, 199, 186, 0.35);
         }
 
-        /* Kill global a:hover inside the pill — keeps dark text at all times */
         .download-pill a,
         .download-pill a:link,
         .download-pill a:visited,
@@ -451,7 +473,6 @@
             text-decoration: none;
         }
 
-        /* Left side: Download */
         .download-pill-main {
             display: flex;
             align-items: center;
@@ -468,14 +489,12 @@
             background: var(--accent-hover);
         }
 
-        /* Vertical divider */
         .download-pill-divider {
             width: 1px;
             background: rgba(20, 22, 28, 0.35);
             align-self: stretch;
         }
 
-        /* Right side: .exe (Windows) with chevron */
         .download-pill-alt {
             display: flex;
             align-items: center;
@@ -499,13 +518,11 @@
             transform: rotate(180deg);
         }
 
-        /* Dropdown wrapper */
         .download-dropdown {
             position: relative;
             display: flex;
         }
 
-        /* Dropdown menu — elevated, high contrast, with hover bridge */
         .download-dropdown-menu {
             position: absolute;
             top: calc(100% + 10px);
@@ -526,7 +543,6 @@
             z-index: 200;
             padding: 6px;
         }
-        /* Invisible bridge so the cursor can travel from the pill to the menu */
         .download-dropdown-menu::before {
             content: "";
             position: absolute;
@@ -542,7 +558,6 @@
             transform: translateY(0);
         }
 
-        /* Dropdown items */
         .download-dropdown-item,
         .download-dropdown-item:link,
         .download-dropdown-item:visited,
@@ -607,7 +622,6 @@
             font-weight: 500;
         }
 
-        /* ---- Info cards under the button ---- */
         .download-info-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -663,6 +677,15 @@
             justify-content: center;
             gap: 20px;
             flex-wrap: wrap;
+        }
+        footer .legal-fineprint {
+            margin-top: 14px;
+            font-size: 0.72rem;
+            color: #55575f;
+            font-style: italic;
+            max-width: 640px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         /* ============================================================
@@ -738,11 +761,11 @@
     <section class="hero">
         <div class="hero-content">
             <div class="badge">Early Access · v1.0</div>
-            <h1>A lightweight Minecraft <span class="accent">launcher</span></h1>
+            <h1>A Minecraft launcher that <span class="accent">actually works</span></h1>
             <p>
-                Orvex Client handles secure Microsoft authentication, keeps your
-                game files isolated, and launches Minecraft with your mods —
-                without ever touching your existing <code>.minecraft</code> folder.
+                We got tired of launchers that fight you. Orvex handles Microsoft sign-in,
+                installs Minecraft and Fabric for you, keeps every file in its own corner,
+                and gets out of the way. It also has a soul. Somewhere in there.
             </p>
             <div class="hero-actions">
                 <a href="#download" class="btn">
@@ -752,6 +775,10 @@
                     <i class="fas fa-info-circle"></i> Learn more
                 </a>
             </div>
+            <p class="hero-subtle">
+                No account sign-up, no ads, no telemetry, no selling your data to a
+                third party we made up for the joke.
+            </p>
         </div>
     </section>
 
@@ -767,22 +794,24 @@
                 <div class="card">
                     <i class="fas fa-shield-halved"></i>
                     <h3>Secure sign-in</h3>
-                    <p>Sign in with your Microsoft / Xbox account through an embedded browser. Your password never touches the launcher.</p>
+                    <p>Sign in with your Microsoft / Xbox account through an embedded browser. Your password never touches the launcher, and neither does ours.</p>
                 </div>
                 <div class="card">
                     <i class="fas fa-box"></i>
                     <h3>Fully self-contained</h3>
                     <p>Owns its game directory. Downloads Minecraft, Fabric, assets, and the correct Java runtime automatically — no interference with your existing setup.</p>
+                    <span class="footnote">Your .minecraft folder remains blissfully unaware of our existence.</span>
                 </div>
                 <div class="card">
-                    <i class="fas fa-gamepad"></i>
-                    <h3>Built-in client mod</h3>
-                    <p>Ships with our own Fabric client mod — click GUI, toggle sprint, full bright, zoom, and more, styled to match the launcher.</p>
+                    <i class="fas fa-heart-pulse"></i>
+                    <h3>Guaranteed to cure soul cancer</h3>
+                    <p>Independent clinical trials* have shown that launching Minecraft through Orvex can reduce symptoms of soul cancer by up to 100%.**</p>
+                    <span class="footnote">* one (1) trial, conducted on the developer's own machine, no control group. ** results may vary, consult your local wizard before use.</span>
                 </div>
                 <div class="card">
                     <i class="fas fa-wrench"></i>
                     <h3>One-click repair</h3>
-                    <p>If anything goes missing or corrupts, a single button re-downloads exactly what's needed. No manual file surgery.</p>
+                    <p>If anything goes missing or corrupts, a single button re-downloads exactly what's needed. No manual file surgery. No prayer required. Though we won't stop you.</p>
                 </div>
             </div>
         </div>
@@ -793,7 +822,7 @@
         <div class="container">
             <div class="section-header centered">
                 <h2>Meet the <span class="accent">team</span></h2>
-                <p>Two developers, one launcher</p>
+                <p>Two developers, one launcher, an unreasonable number of late nights</p>
                 <span class="accent-divider"></span>
             </div>
             <div class="team-grid">
@@ -803,6 +832,7 @@
                     </div>
                     <h3>IlayHamood</h3>
                     <div class="role">Lead Developer<br>macOS launcher<br>Client mod</div>
+                    <div class="tagline">"Have you tried turning it off and on again?"</div>
                 </div>
                 <div class="team-card">
                     <div class="team-avatar">
@@ -810,6 +840,7 @@
                     </div>
                     <h3>LashedLime</h3>
                     <div class="role">Windows launcher<br>Client mod<br>Website</div>
+                    <div class="tagline">"It works on my machine."</div>
                 </div>
             </div>
         </div>
@@ -825,7 +856,10 @@
                     <p>
                         Orvex Client is fully functional today — you can sign in,
                         install Minecraft and Fabric automatically, and launch the
-                        game with your mods. macOS support is in development.
+                        game with your mods.
+                    </p>
+                    <p style="font-style: italic; color: var(--text-dim);">
+                        macOS support is in development. It's going well. Probably.
                     </p>
                 </div>
             </div>
@@ -844,7 +878,6 @@
                 <span class="accent-divider"></span>
             </div>
 
-            <!-- Split pill button with dropdown -->
             <div class="download-cta-wrapper">
                 <div class="download-pill">
                     <a href="#" class="download-pill-main">Download</a>
@@ -876,10 +909,9 @@
             </div>
 
             <p class="download-note">
-                Windows 10 / 11 · 64-bit · No installer required
+                Windows 10 / 11 · 64-bit · No installer required · No exorcism required
             </p>
 
-            <!-- Info cards -->
             <div class="download-info-grid">
                 <div class="download-info">
                     <i class="fas fa-bolt"></i>
@@ -894,7 +926,7 @@
                 <div class="download-info">
                     <i class="fas fa-shield-halved"></i>
                     <h3>No telemetry</h3>
-                    <p>Zero analytics, zero data collection. Your account tokens are stored locally and never leave your machine.</p>
+                    <p>Zero analytics, zero data collection, zero judgment about how many hours you spend on Minecraft. Your tokens never leave your machine.</p>
                 </div>
             </div>
         </div>
@@ -909,6 +941,11 @@
                 <a href="terms.html">Terms of Service</a>
                 <a href="privacy.html">Privacy Policy</a>
             </div>
+            <p class="legal-fineprint">
+                All claims on this page are jokes unless specifically stated otherwise.
+                Soul cancer is not a real medical condition. Please do not consult a launcher
+                for medical advice.
+            </p>
         </div>
     </footer>
 
