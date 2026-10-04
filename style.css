@@ -490,7 +490,7 @@
         .page-en .download-inner{
             position: relative;
             z-index: 1;
-            max-width: 780px;
+            max-width: 900px;
             width: 100%;
         }
         .page-en .download-section h2{
@@ -539,10 +539,9 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 20px 44px;
-            font-size: 1.15rem;
+            padding: 20px 36px;
+            font-size: 1.08rem;
             font-weight: 800;
-            letter-spacing: 0.2px;
             white-space: nowrap;
             border-radius: 999px 0 0 999px;
             transition: background 0.2s ease;
@@ -562,8 +561,8 @@
             align-items: center;
             justify-content: center;
             gap: 14px;
-            padding: 20px 40px;
-            font-size: 1.15rem;
+            padding: 20px 32px;
+            font-size: 1.05rem;
             font-weight: 700;
             white-space: nowrap;
             border-radius: 0 999px 999px 0;
@@ -576,7 +575,7 @@
             font-size: 0.85rem;
             transition: transform 0.25s ease;
         }
-        .page-en .download-dropdown:hover .download-pill-alt .chevron{
+        .page-en .download-dropdown:hover .download-pill-alt .chevron, .page-en .download-dropdown:focus-within .download-pill-alt .chevron{
             transform: rotate(180deg);
         }
 
@@ -613,7 +612,7 @@
             right: 0;
             height: 10px;
         }
-        .page-en .download-dropdown:hover .download-dropdown-menu, .page-en .download-dropdown-menu:hover{
+        .page-en .download-dropdown:hover .download-dropdown-menu, .page-en .download-dropdown:focus-within .download-dropdown-menu, .page-en .download-dropdown-menu:hover{
             opacity: 1;
             visibility: visible;
             transform: translateY(0);
@@ -675,7 +674,7 @@
         .page-en .download-note{
             font-size: 0.88rem;
             color: var(--text-dim);
-            margin-bottom: 56px;
+            margin-bottom: 48px;
             font-weight: 500;
         }
 
@@ -749,7 +748,7 @@
                 flex-direction: column;
                 border-radius: 20px;
                 width: 100%;
-                max-width: 320px;
+                max-width: 360px;
             }
             .page-en .download-pill-divider{
                 width: auto;
@@ -766,9 +765,9 @@
                 right: auto;
                 left: 50%;
                 transform: translate(-50%, -6px);
-                min-width: 280px;
+                min-width: min(300px, 90vw);
             }
-            .page-en .download-dropdown:hover .download-dropdown-menu, .page-en .download-dropdown-menu:hover{
+            .page-en .download-dropdown:hover .download-dropdown-menu, .page-en .download-dropdown:focus-within .download-dropdown-menu, .page-en .download-dropdown-menu:hover{
                 transform: translate(-50%, 0);
             }
         }
@@ -1264,7 +1263,7 @@
         .page-ru .download-inner{
             position: relative;
             z-index: 1;
-            max-width: 780px;
+            max-width: 900px;
             width: 100%;
         }
         .page-ru .download-section h2{
@@ -1313,10 +1312,9 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 20px 44px;
-            font-size: 1.15rem;
+            padding: 20px 36px;
+            font-size: 1.08rem;
             font-weight: 800;
-            letter-spacing: 0.2px;
             white-space: nowrap;
             border-radius: 999px 0 0 999px;
             transition: background 0.2s ease;
@@ -1336,8 +1334,8 @@
             align-items: center;
             justify-content: center;
             gap: 14px;
-            padding: 20px 40px;
-            font-size: 1.15rem;
+            padding: 20px 32px;
+            font-size: 1.05rem;
             font-weight: 700;
             white-space: nowrap;
             border-radius: 0 999px 999px 0;
@@ -1350,7 +1348,7 @@
             font-size: 0.85rem;
             transition: transform 0.25s ease;
         }
-        .page-ru .download-dropdown:hover .download-pill-alt .chevron{
+        .page-ru .download-dropdown:hover .download-pill-alt .chevron, .page-ru .download-dropdown:focus-within .download-pill-alt .chevron{
             transform: rotate(180deg);
         }
 
@@ -1387,7 +1385,7 @@
             right: 0;
             height: 10px;
         }
-        .page-ru .download-dropdown:hover .download-dropdown-menu, .page-ru .download-dropdown-menu:hover{
+            .page-ru .download-dropdown:hover .download-dropdown-menu, .page-ru .download-dropdown:focus-within .download-dropdown-menu, .page-ru .download-dropdown-menu:hover{
             opacity: 1;
             visibility: visible;
             transform: translateY(0);
@@ -1449,7 +1447,7 @@
         .page-ru .download-note{
             font-size: 0.88rem;
             color: var(--text-dim);
-            margin-bottom: 56px;
+            margin-bottom: 48px;
             font-weight: 500;
         }
 
@@ -1523,7 +1521,7 @@
                 flex-direction: column;
                 border-radius: 20px;
                 width: 100%;
-                max-width: 320px;
+                max-width: 360px;
             }
             .page-ru .download-pill-divider{
                 width: auto;
@@ -1540,9 +1538,9 @@
                 right: auto;
                 left: 50%;
                 transform: translate(-50%, -6px);
-                min-width: 280px;
+                min-width: min(300px, 90vw);
             }
-            .page-ru .download-dropdown:hover .download-dropdown-menu, .page-ru .download-dropdown-menu:hover{
+        .page-ru .download-dropdown:hover .download-dropdown-menu, .page-ru .download-dropdown:focus-within .download-dropdown-menu, .page-ru .download-dropdown-menu:hover{
                 transform: translate(-50%, 0);
             }
         }
@@ -1985,7 +1983,7 @@
         .page-he .download-inner{
             position: relative;
             z-index: 1;
-            max-width: 780px;
+            max-width: 900px;
             width: 100%;
         }
         .page-he .download-section h2{
@@ -2034,10 +2032,9 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 20px 44px;
-            font-size: 1.15rem;
+            padding: 20px 36px;
+            font-size: 1.08rem;
             font-weight: 800;
-            letter-spacing: 0.2px;
             white-space: nowrap;
             border-radius: 0 999px 999px 0;
             transition: background 0.2s ease;
@@ -2057,8 +2054,8 @@
             align-items: center;
             justify-content: center;
             gap: 14px;
-            padding: 20px 40px;
-            font-size: 1.15rem;
+            padding: 20px 32px;
+            font-size: 1.05rem;
             font-weight: 700;
             white-space: nowrap;
             border-radius: 999px 0 0 999px;
@@ -2071,7 +2068,7 @@
             font-size: 0.85rem;
             transition: transform 0.25s ease;
         }
-        .page-he .download-dropdown:hover .download-pill-alt .chevron{
+        .page-he .download-dropdown:hover .download-pill-alt .chevron, .page-he .download-dropdown:focus-within .download-pill-alt .chevron{
             transform: rotate(180deg);
         }
 
@@ -2109,7 +2106,7 @@
             right: 0;
             height: 10px;
         }
-        .page-he .download-dropdown:hover .download-dropdown-menu, .page-he .download-dropdown-menu:hover{
+        .page-he .download-dropdown:hover .download-dropdown-menu, .page-he .download-dropdown:focus-within .download-dropdown-menu, .page-he .download-dropdown-menu:hover{
             opacity: 1;
             visibility: visible;
             transform: translateY(0);
@@ -2174,7 +2171,7 @@
         .page-he .download-note{
             font-size: 0.88rem;
             color: var(--text-dim);
-            margin-bottom: 56px;
+            margin-bottom: 48px;
             font-weight: 500;
         }
 
@@ -2248,7 +2245,7 @@
                 flex-direction: column;
                 border-radius: 20px;
                 width: 100%;
-                max-width: 320px;
+                max-width: 360px;
             }
             .page-he .download-pill-divider{
                 width: auto;
@@ -2265,9 +2262,9 @@
                 right: auto;
                 left: 50%;
                 transform: translate(-50%, -6px);
-                min-width: 280px;
+                min-width: min(300px, 90vw);
             }
-            .page-he .download-dropdown:hover .download-dropdown-menu, .page-he .download-dropdown-menu:hover{
+            .page-he .download-dropdown:hover .download-dropdown-menu, .page-he .download-dropdown:focus-within .download-dropdown-menu, .page-he .download-dropdown-menu:hover{
                 transform: translate(-50%, 0);
             }
         }
