@@ -115,6 +115,23 @@
             color: var(--accent);
             background: var(--bg-hover);
         }
+        .lang-select {
+            background: var(--bg-surface-alt);
+            color: var(--text-muted);
+            border: 1px solid var(--border-strong);
+            font-weight: 600;
+            font-size: 0.85rem;
+            padding: 6px 10px;
+            border-radius: var(--radius-button);
+            cursor: pointer;
+            margin-left: 8px;
+            outline: none;
+            transition: border-color 0.15s, color 0.15s;
+        }
+        .lang-select:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+        }
 
         /* ============================================================
            HERO
@@ -753,6 +770,11 @@
                 <a href="https://github.com/LashedLime" target="_blank">
                     <i class="fab fa-github"></i> Source
                 </a>
+                <select class="lang-select" onchange="window.location.href=this.value;">
+                    <option value="https://lashedlime.github.io" selected>English</option>
+                    <option value="https://lashedlime.github.io/he-il">עברית</option>
+                    <option value="https://lashedlime.github.io/ru-ru">Русский</option>
+                </select>
             </nav>
         </div>
     </header>
