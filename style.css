@@ -163,7 +163,6 @@
             outline: none;
         }
         .page-en .language-menu-list a[aria-current="page"]{ color: var(--accent); font-weight: 700; }
-        .page-en .language-menu-list a[aria-current="page"]::after{ content: "✓"; font-size: 0.8rem; }
 
 
         .page-en .hero{
@@ -953,7 +952,6 @@
             outline: none;
         }
         .page-ru .language-menu-list a[aria-current="page"]{ color: var(--accent); font-weight: 700; }
-        .page-ru .language-menu-list a[aria-current="page"]::after{ content: "✓"; font-size: 0.8rem; }
 
 
         .page-ru .hero{
@@ -2353,7 +2351,6 @@
 		.page-ja .language-menu-list a{ display: flex; justify-content: space-between; gap: 14px; padding: 9px 11px; border-radius: 6px; color: var(--body); font-size: .9rem; }
 		.page-ja .language-menu-list a:hover, .page-ja .language-menu-list a:focus-visible{ background: var(--hover); color: var(--accent); outline: none; }
 		.page-ja .language-menu-list a[aria-current="page"]{ color: var(--accent); font-weight: 700; }
-		.page-ja .language-menu-list a[aria-current="page"]::after{ content: "✓"; }
 		.page-ja .hero{ min-height: 72vh; display: grid; place-items: center; padding: 90px 20px; text-align: center; background: radial-gradient(ellipse at 50% 0, rgba(48,199,186,.13), transparent 56%); }
 		.page-ja .hero-content{ max-width: 820px; }
 		.page-ja .badge{ display: inline-block; margin-bottom: 22px; padding: 5px 13px; border: 1px solid var(--border-strong); border-radius: 20px; color: var(--accent); background: var(--surface-alt); font-size: .78rem; font-weight: 700; letter-spacing: .04em; }
@@ -2746,4 +2743,3 @@
 	outline: none;
 }
 .page-en .language-menu-list a[aria-current="page"], .page-ru .language-menu-list a[aria-current="page"], .page-he .language-menu-list a[aria-current="page"], .page-ja .language-menu-list a[aria-current="page"] { color: var(--accent); font-weight: 700; }
-.page-en .language-menu-list a[aria-current="page"]::after, .page-ru .language-menu-list a[aria-current="page"]::after, .page-he .language-menu-list a[aria-current="page"]::after, .page-ja .language-menu-list a[aria-current="page"]::after { content: "âœ“"; font-size: 0.8rem; }
