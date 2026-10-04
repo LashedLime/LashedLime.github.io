@@ -320,6 +320,45 @@
             font-style: italic;
         }
 
+        .comparison {
+            margin-top: 56px;
+            padding: 28px;
+            background: var(--bg-surface-alt);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-card);
+        }
+        .comparison h3 {
+            color: var(--text-primary);
+            font-size: 1.35rem;
+            margin-bottom: 8px;
+        }
+        .comparison-intro,
+        .comparison-hardware {
+            color: var(--text-body);
+            font-size: 0.9rem;
+        }
+        .comparison-hardware { margin-top: 12px; color: var(--text-muted); }
+        .comparison-table-wrap { overflow-x: auto; margin-top: 20px; }
+        .comparison table {
+            width: 100%;
+            min-width: 600px;
+            border-collapse: collapse;
+            text-align: left;
+        }
+        .comparison th,
+        .comparison td {
+            padding: 13px 16px;
+            border-bottom: 1px solid var(--border-subtle);
+        }
+        .comparison th { color: var(--text-muted); font-size: 0.82rem; }
+        .comparison td { color: var(--text-body); }
+        .comparison thead th:first-child,
+        .comparison tbody th { color: var(--text-primary); }
+        .comparison tbody tr:last-child td,
+        .comparison tbody tr:last-child th { border-bottom: 0; }
+        .comparison .orvex-value { color: var(--accent); font-weight: 700; }
+        .comparison-note { margin-top: 14px; color: var(--text-dim); font-size: 0.78rem; }
+
         /* ============================================================
            TEAM
            ============================================================ */
@@ -783,11 +822,10 @@
     <section class="hero">
         <div class="hero-content">
             <div class="badge">Early Access · v1.0</div>
-            <h1>A Minecraft launcher that <span class="accent">actually works</span></h1>
+            <h1>A lightweight Minecraft launcher that <span class="accent">stays out of your game</span></h1>
             <p>
-                We got tired of launchers that fight you. Orvex handles Microsoft sign-in,
-                installs Minecraft and Fabric for you, keeps every file in its own corner,
-                and gets out of the way. It also has a soul. Somewhere in there.
+                Sign in, install Minecraft and Fabric, manage mods, and launch from one place.
+                Orvex is designed to use minimal resources so your PC can focus on gaming.
             </p>
             <div class="hero-actions">
                 <a href="#download" class="btn">
@@ -798,8 +836,7 @@
                 </a>
             </div>
             <p class="hero-subtle">
-                No account sign-up, no ads, no telemetry, no selling your data to a
-                third party we made up for the joke.
+                No ads or telemetry. Your game files stay separate from the standard .minecraft folder.
             </p>
         </div>
     </section>
@@ -809,33 +846,77 @@
         <div class="container">
             <div class="section-header centered">
                 <h2>What it <span class="accent">does</span></h2>
-                <p>A lean launcher that stays out of your way</p>
+                <p>Everything you need to get into Minecraft, without unnecessary background load.</p>
                 <span class="accent-divider"></span>
             </div>
             <div class="grid">
                 <div class="card">
                     <i class="fas fa-shield-halved"></i>
                     <h3>Secure sign-in</h3>
-                    <p>Sign in with your Microsoft / Xbox account through an embedded browser. Your password never touches the launcher, and neither does ours.</p>
+                    <p>Sign in securely with your Microsoft account. Your password is never handled by Orvex.</p>
                 </div>
                 <div class="card">
                     <i class="fas fa-box"></i>
                     <h3>Fully self-contained</h3>
-                    <p>Owns its game directory. Downloads Minecraft, Fabric, assets, and the correct Java runtime automatically — no interference with your existing setup.</p>
-                    <span class="footnote">Your .minecraft folder remains blissfully unaware of our existence.</span>
+                    <p>Minecraft, Fabric, assets, and Java are installed in Orvex’s own game directory, separate from your existing setup.</p>
                 </div>
                 <div class="card">
-                    <i class="fas fa-heart-pulse"></i>
-                    <h3>Guaranteed to cure soul cancer</h3>
-                    <p>Independent clinical trials* have shown that launching Minecraft through Orvex can reduce symptoms of soul cancer by up to 100%.**</p>
-                    <span class="footnote">* one (1) trial, conducted on the developer's own machine, no control group. ** results may vary, consult your local wizard before use.</span>
+                    <i class="fas fa-feather"></i>
+                    <h3>Lightweight by design</h3>
+                    <p>Orvex keeps its idle resource use low, leaving more of your PC available for Minecraft.</p>
                 </div>
                 <div class="card">
                     <i class="fas fa-wrench"></i>
                     <h3>One-click repair</h3>
-                    <p>If anything goes missing or corrupts, a single button re-downloads exactly what's needed. No manual file surgery. No prayer required. Though we won't stop you.</p>
+                    <p>Repair missing or corrupted launcher files with one click—no manual cleanup required.</p>
                 </div>
             </div>
+
+            <section class="comparison" aria-labelledby="comparison-title">
+                <h3 id="comparison-title">Launcher resource comparison</h3>
+                <p class="comparison-intro">Recorded launcher usage on the same system. Orvex readings were taken minimized and idle.</p>
+                <div class="comparison-table-wrap">
+                    <table>
+                        <caption class="comparison-note">Recorded values; not an in-game FPS benchmark.</caption>
+                        <thead>
+                            <tr>
+                                <th scope="col">Measure</th>
+                                <th scope="col">Dawn Client</th>
+                                <th scope="col">Norisk Client</th>
+                                <th scope="col">Orvex Client</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">CPU</th>
+                                <td>0.1%</td>
+                                <td>5%</td>
+                                <td class="orvex-value">0%*</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">GPU</th>
+                                <td>0.1%</td>
+                                <td>6%</td>
+                                <td class="orvex-value">0%*</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">RAM</th>
+                                <td>200 MB</td>
+                                <td>450 MB</td>
+                                <td class="orvex-value">100 MB*</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Launcher smoothness</th>
+                                <td>Laggy</td>
+                                <td>Smooth</td>
+                                <td class="orvex-value">Very smooth</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p class="comparison-hardware"><strong>Test system:</strong> Windows 10, 16 GB RAM, 11th Gen Intel Core i7 at 2.80 GHz, integrated Intel Iris Xe Graphics.</p>
+                <p class="comparison-note">* Orvex measured minimized and idle. Measurements can vary by system and usage; low launcher usage is intended to leave more resources available to your game, but does not guarantee a specific FPS or gameplay result.</p>
+            </section>
         </div>
     </section>
 
@@ -844,7 +925,7 @@
         <div class="container">
             <div class="section-header centered">
                 <h2>Meet the <span class="accent">team</span></h2>
-                <p>Two developers, one launcher, an unreasonable number of late nights</p>
+                <p>Built by a small team focused on making Minecraft easier to launch.</p>
                 <span class="accent-divider"></span>
             </div>
             <div class="team-grid">
@@ -854,7 +935,6 @@
                     </div>
                     <h3>IlayHamood</h3>
                     <div class="role">Lead Developer<br>macOS launcher<br>Client mod</div>
-                    <div class="tagline">"Have you tried turning it off and on again?"</div>
                 </div>
                 <div class="team-card">
                     <div class="team-avatar">
@@ -862,7 +942,6 @@
                     </div>
                     <h3>LashedLime</h3>
                     <div class="role">Windows launcher<br>Client mod<br>Website</div>
-                    <div class="tagline">"It works on my machine."</div>
                 </div>
             </div>
         </div>
@@ -881,7 +960,7 @@
                         game with your mods.
                     </p>
                     <p style="font-style: italic; color: var(--text-dim);">
-                        macOS support is in development. It's going well. Probably.
+                        macOS support is in development.
                     </p>
                 </div>
             </div>
@@ -894,8 +973,8 @@
             <div class="section-header centered">
                 <h2>Get <span class="accent">Orvex Client</span></h2>
                 <p class="download-lead">
-                    One launcher that handles everything — authentication, Minecraft installation,
-                    Fabric mod loader, Java runtime, and mod management. No manual setup required.
+                    A lightweight launcher for Microsoft sign-in, Minecraft and Fabric installation,
+                    Java setup, and mod management.
                 </p>
                 <span class="accent-divider"></span>
             </div>
@@ -963,11 +1042,6 @@
                 <a href="terms.html">Terms of Service</a>
                 <a href="privacy.html">Privacy Policy</a>
             </div>
-            <p class="legal-fineprint">
-                Some claims on this page are jokes.
-                Soul cancer is not a real medical condition. Please do not consult a launcher
-                for medical advice. joke is funny hehehehehehehehhehehehheee.
-            </p>
         </div>
     </footer>
 

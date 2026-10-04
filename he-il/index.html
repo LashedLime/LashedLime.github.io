@@ -324,6 +324,26 @@
             font-style: italic;
         }
 
+        .comparison {
+            margin-top: 56px;
+            padding: 28px;
+            background: var(--bg-surface-alt);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-card);
+        }
+        .comparison h3 { color: var(--text-primary); font-size: 1.35rem; margin-bottom: 8px; }
+        .comparison-intro, .comparison-hardware { color: var(--text-body); font-size: 0.9rem; }
+        .comparison-hardware { margin-top: 12px; color: var(--text-muted); }
+        .comparison-table-wrap { overflow-x: auto; margin-top: 20px; }
+        .comparison table { width: 100%; min-width: 600px; border-collapse: collapse; text-align: left; }
+        .comparison th, .comparison td { padding: 13px 16px; border-bottom: 1px solid var(--border-subtle); }
+        .comparison th { color: var(--text-muted); font-size: 0.82rem; }
+        .comparison td { color: var(--text-body); }
+        .comparison thead th:first-child, .comparison tbody th { color: var(--text-primary); }
+        .comparison tbody tr:last-child td, .comparison tbody tr:last-child th { border-bottom: 0; }
+        .comparison .orvex-value { color: var(--accent); font-weight: 700; }
+        .comparison-note { margin-top: 14px; color: var(--text-dim); font-size: 0.78rem; }
+
         /* ============================================================
            TEAM
            ============================================================ */
@@ -462,7 +482,7 @@
         }
 
         /* ============================================================
-           SPLIT PILL DOWNLOAD BUTTON (RTL MIRRORED)
+           SPLIT PILL DOWNLOAD BUTTON
            ============================================================ */
         .download-cta-wrapper {
             display: flex;
@@ -480,7 +500,6 @@
             overflow: visible;
             box-shadow: 0 10px 32px rgba(48, 199, 186, 0.25);
             transition: box-shadow 0.3s ease;
-            flex-direction: row-reverse;
         }
         .download-pill:hover {
             box-shadow: 0 16px 44px rgba(48, 199, 186, 0.35);
@@ -793,11 +812,10 @@
     <section class="hero">
         <div class="hero-content">
             <div class="badge">גישה מוקדמת · v1.0</div>
-            <h1>מפעיל מיינקראפט ש<span class="accent">באמת עובד</span></h1>
+            <h1>מפעיל Minecraft קל משקל ש<span class="accent">לא מפריע למשחק</span></h1>
             <p>
-                נמאס לנו ממפעילים שנלחמים בך. Orvex מטפל בהתחברות ל-Microsoft,
-                מתקין עבורך את Minecraft ו-Fabric, שומר כל קובץ בפינה שלו,
-                ומפנה את הדרך. יש לו גם נשמה. איפשהו שם בפנים.
+                התחברו, התקינו את Minecraft ו-Fabric, נהלו מודים והפעילו את המשחק ממקום אחד.
+                Orvex תוכנן להשתמש במשאבים מעטים כדי להשאיר יותר מהמחשב שלכם למשחק.
             </p>
             <div class="hero-actions">
                 <a href="#download" class="btn">
@@ -808,7 +826,7 @@
                 </a>
             </div>
             <p class="hero-subtle">
-                ללא הרשמת חשבון, ללא פרסומות, ללא טלמטריה, וללא מכירת הנתונים שלך לצד שלישי שהמצאנו בשביל הבדיחה.
+                ללא פרסומות או טלמטריה. קובצי המשחק נשמרים בנפרד מתיקיית ‎.minecraft הרגילה.
             </p>
         </div>
     </section>
@@ -818,33 +836,51 @@
         <div class="container">
             <div class="section-header centered">
                 <h2>מה הוא <span class="accent">עושה</span></h2>
-                <p>מפעיל רזה שלא מפריע לך לשחק</p>
+                <p>כל מה שצריך כדי להיכנס ל-Minecraft, ללא עומס רקע מיותר.</p>
                 <span class="accent-divider"></span>
             </div>
             <div class="grid">
                 <div class="card">
                     <i class="fas fa-shield-halved"></i>
                     <h3>התחברות מאובטחת</h3>
-                    <p>התחבר עם חשבון ה-Microsoft / Xbox שלך דרך דפדפן מובנה. הסיסמה שלך לעולם לא נוגעת במפעיל, וגם לא הסיסמה שלנו.</p>
+                    <p>התחברות מאובטחת לחשבון Microsoft. Orvex לעולם אינו מטפל בסיסמה שלך.</p>
                 </div>
                 <div class="card">
                     <i class="fas fa-box"></i>
                     <h3>עצמאי לחלוטין</h3>
-                    <p>מנהל תיקיית משחק משלו. מוריד את Minecraft, Fabric, הנכסים וסביבת העבודה של Java המתאימה באופן אוטומטי — ללא התנגשות עם ההתקנה הקיימת שלך.</p>
-                    <span class="footnote">תיקיית ה-‎.minecraft הקיימת שלך נשארת בורות מבורכת לגבי קיומנו.</span>
+                    <p>Minecraft, Fabric, נכסים ו-Java מותקנים בתיקייה נפרדת של Orvex, בלי לשנות את ההתקנה הקיימת שלך.</p>
                 </div>
                 <div class="card">
-                    <i class="fas fa-heart-pulse"></i>
-                    <h3>מובטח לרפא סרטן הנשמה</h3>
-                    <p>ניסויים קליניים עצמאיים* הראו שהפעלת מיינקראפט דרך Orvex יכולה להפחית תסמינים של סרטן הנשמה עד כ-100%.**</p>
-                    <span class="footnote">* ניסוי אחד (1), שנערך במחשב האישי של המפתח, ללא קבוצת ביקורת. ** התוצאות עשויות להשתנות, יש להתייעץ עם הקוסם המקומי שלך לפני השימוש.</span>
+                    <i class="fas fa-feather"></i>
+                    <h3>קל משקל בתכנון</h3>
+                    <p>צריכת משאבים נמוכה בזמן חוסר פעילות משאירה יותר משאבים זמינים ל-Minecraft.</p>
                 </div>
                 <div class="card">
                     <i class="fas fa-wrench"></i>
                     <h3>תיקון בלחיצה אחת</h3>
-                    <p>אם משהו נעלם או נפגם, לחיצה על כפתור יחיד מורידה מחדש בדיוק את מה שנחוץ. ללא ניתוח קבצים ידני. ללא צורך בתפילות. למרות שלא נעצור אותך.</p>
+                    <p>אפשר לתקן קובצי מפעיל חסרים או פגומים בלחיצה אחת, ללא ניקוי ידני.</p>
                 </div>
             </div>
+            <section class="comparison" aria-labelledby="comparison-title">
+                <h3 id="comparison-title">השוואת צריכת משאבים</h3>
+                <p class="comparison-intro">צריכת המפעילים נמדדה באותה מערכת. Orvex נמדד כשהוא ממוזער וללא פעילות.</p>
+                <div class="comparison-table-wrap">
+                    <table dir="rtl">
+                        <caption class="comparison-note">הערכים שנמדדו; זו אינה בדיקת FPS בתוך המשחק.</caption>
+                        <thead>
+                            <tr><th scope="col">מדד</th><th scope="col">Dawn Client</th><th scope="col">Norisk Client</th><th scope="col">Orvex Client</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><th scope="row">CPU</th><td>0.1%</td><td>5%</td><td class="orvex-value">0%*</td></tr>
+                            <tr><th scope="row">GPU</th><td>0.1%</td><td>6%</td><td class="orvex-value">0%*</td></tr>
+                            <tr><th scope="row">RAM</th><td>200 MB</td><td>450 MB</td><td class="orvex-value">100 MB*</td></tr>
+                            <tr><th scope="row">חלקות המפעיל</th><td>איטי ומקרטע</td><td>חלק</td><td class="orvex-value">חלק מאוד</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p class="comparison-hardware"><strong>מערכת הבדיקה:</strong> Windows 10, זיכרון RAM בנפח 16 GB, Intel Core i7 דור 11 במהירות 2.80 GHz, גרפיקה משולבת Intel Iris Xe.</p>
+                <p class="comparison-note">* Orvex נמדד כשהוא ממוזער וללא פעילות. המדידות עשויות להשתנות לפי המערכת והשימוש. צריכת משאבים נמוכה של המפעיל משאירה יותר משאבים למשחק, אך אינה מבטיחה FPS או תוצאה מסוימת במשחק.</p>
+            </section>
         </div>
     </section>
 
@@ -853,7 +889,7 @@
         <div class="container">
             <div class="section-header centered">
                 <h2>הכירו את <span class="accent">הצוות</span></h2>
-                <p>שני מפתחים, מפעיל אחד, וכמות בלתי סבירה של לילות לבנים</p>
+                <p>צוות קטן שמתמקד בדרך פשוטה להפעיל את Minecraft.</p>
                 <span class="accent-divider"></span>
             </div>
             <div class="team-grid">
@@ -863,7 +899,6 @@
                     </div>
                     <h3>IlayHamood</h3>
                     <div class="role">מפתח ראשי<br>מפעיל macOS<br>מוד לקוח</div>
-                    <div class="tagline">"ניסית לכבות ולהדליק מחדש?"</div>
                 </div>
                 <div class="team-card">
                     <div class="team-avatar">
@@ -871,7 +906,6 @@
                     </div>
                     <h3>LashedLime</h3>
                     <div class="role">מפעיל Windows<br>מוד לקוח<br>אתר אינטרנט</div>
-                    <div class="tagline">"אצלי במחשב זה עובד."</div>
                 </div>
             </div>
         </div>
@@ -890,7 +924,7 @@
                         את המשחק עם המודים שלך.
                     </p>
                     <p style="font-style: italic; color: var(--text-dim);">
-                        תמיכה ב-macOS נמצאת בפיתוח. זה מתקדם טוב. כנראה.
+                        תמיכה ב-macOS נמצאת בפיתוח.
                     </p>
                 </div>
             </div>
@@ -903,8 +937,7 @@
             <div class="section-header centered">
                 <h2>הורד את <span class="accent">Orvex Client</span></h2>
                 <p class="download-lead">
-                    מפעיל אחד שמטפל בהכל — אימות, התקנת Minecraft,
-                    מנהל המודים Fabric, סביבת Java וניהול מודים. ללא צורך בהגדרה ידנית.
+                    מפעיל קל משקל להתחברות, התקנת Minecraft ו-Fabric, הגדרת Java וניהול מודים.
                 </p>
                 <span class="accent-divider"></span>
             </div>
@@ -972,11 +1005,6 @@
                 <a href="terms.html">תנאי שימוש</a>
                 <a href="privacy.html">מדיניות פרטיות</a>
             </div>
-            <p class="legal-fineprint">
-                חלק מהטענות בדף זה הן בדיחה.
-                סרטן הנשמה אינו מצב רפואי אמיתי. אנא אל תתייעץ עם מפעיל משחקים
-                לקבלת ייעוץ רפואי. הבדיחה מצחיקה חחחחחחחחחחחחחחחחחחחחחח.
-            </p>
         </div>
     </footer>
 

@@ -320,6 +320,26 @@
             font-style: italic;
         }
 
+        .comparison {
+            margin-top: 56px;
+            padding: 28px;
+            background: var(--bg-surface-alt);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-card);
+        }
+        .comparison h3 { color: var(--text-primary); font-size: 1.35rem; margin-bottom: 8px; }
+        .comparison-intro, .comparison-hardware { color: var(--text-body); font-size: 0.9rem; }
+        .comparison-hardware { margin-top: 12px; color: var(--text-muted); }
+        .comparison-table-wrap { overflow-x: auto; margin-top: 20px; }
+        .comparison table { width: 100%; min-width: 600px; border-collapse: collapse; text-align: left; }
+        .comparison th, .comparison td { padding: 13px 16px; border-bottom: 1px solid var(--border-subtle); }
+        .comparison th { color: var(--text-muted); font-size: 0.82rem; }
+        .comparison td { color: var(--text-body); }
+        .comparison thead th:first-child, .comparison tbody th { color: var(--text-primary); }
+        .comparison tbody tr:last-child td, .comparison tbody tr:last-child th { border-bottom: 0; }
+        .comparison .orvex-value { color: var(--accent); font-weight: 700; }
+        .comparison-note { margin-top: 14px; color: var(--text-dim); font-size: 0.78rem; }
+
         /* ============================================================
            TEAM
            ============================================================ */
@@ -783,11 +803,10 @@
     <section class="hero">
         <div class="hero-content">
             <div class="badge">Ранний доступ · v1.0</div>
-            <h1>Лаунчер Minecraft, который <span class="accent">действительно работает</span></h1>
+            <h1>Легкий лаунчер Minecraft, который <span class="accent">не мешает игре</span></h1>
             <p>
-                Нам надоели лаунчеры, которые мешают играть. Orvex берет на себя вход в аккаунт Microsoft,
-                автоматически устанавливает Minecraft и Fabric, раскладывает все файлы по своим местам
-                и не мозолит глаза. А еще у него есть душа. Где-то там внутри.
+                Входите в аккаунт, устанавливайте Minecraft и Fabric, управляйте модами и запускайте игру из одного места.
+                Orvex создан для низкого потребления ресурсов, чтобы компьютер мог сосредоточиться на игре.
             </p>
             <div class="hero-actions">
                 <a href="#download" class="btn">
@@ -798,8 +817,7 @@
                 </a>
             </div>
             <p class="hero-subtle">
-                Без регистрации, без рекламы, без телеметрии и без продажи ваших данных
-                третьим лицам, которых мы выдумали ради шутки.
+                Без рекламы и телеметрии. Файлы игры хранятся отдельно от стандартной папки .minecraft.
             </p>
         </div>
     </section>
@@ -809,33 +827,51 @@
         <div class="container">
             <div class="section-header centered">
                 <h2>Что он <span class="accent">умеет</span></h2>
-                <p>Лаконичный лаунчер, который просто делает свое дело</p>
+                <p>Всё необходимое для запуска Minecraft — без лишней фоновой нагрузки.</p>
                 <span class="accent-divider"></span>
             </div>
             <div class="grid">
                 <div class="card">
                     <i class="fas fa-shield-halved"></i>
                     <h3>Безопасный вход</h3>
-                    <p>Входите в свой аккаунт Microsoft / Xbox через встроенный браузер. Ваш пароль никогда не попадает в лаунчер — и тем более к нам.</p>
+                    <p>Безопасный вход в аккаунт Microsoft. Orvex никогда не обрабатывает ваш пароль.</p>
                 </div>
                 <div class="card">
                     <i class="fas fa-box"></i>
                     <h3>Полная автономия</h3>
-                    <p>Использует собственную директорию игры. Автоматически скачивает Minecraft, Fabric, ресурсы и нужную версию Java, никак не затрагивая ваши текущие настройки.</p>
-                    <span class="footnote">Ваша папка .minecraft остается в счастливом неведении о нашем существовании.</span>
+                    <p>Minecraft, Fabric, ресурсы и Java устанавливаются в отдельную директорию Orvex, не затрагивая вашу текущую конфигурацию.</p>
                 </div>
                 <div class="card">
-                    <i class="fas fa-heart-pulse"></i>
-                    <h3>Гарантированно исцеляет рак души</h3>
-                    <p>Независимые клинические испытания* показали, что запуск Minecraft через Orvex снижает симптомы рака души вплоть до 100%.**</p>
-                    <span class="footnote">* одно (1) испытание на ПК самого разработчика, без контрольной группы. ** результаты могут отличаться, перед применением проконсультируйтесь с местным чародеем.</span>
+                    <i class="fas fa-feather"></i>
+                    <h3>Легкий и экономичный</h3>
+                    <p>Низкое потребление ресурсов в простое оставляет больше возможностей для Minecraft.</p>
                 </div>
                 <div class="card">
                     <i class="fas fa-wrench"></i>
                     <h3>Восстановление в один клик</h3>
-                    <p>Если что-то потеряется или повредится, одна кнопка повторно скачает ровно то, что нужно. Никакого копания в файлах. Молитвы не требуются (хотя мы не запрещаем).</p>
+                    <p>Восстановите отсутствующие или поврежденные файлы лаунчера одним нажатием — без ручной очистки.</p>
                 </div>
             </div>
+            <section class="comparison" aria-labelledby="comparison-title">
+                <h3 id="comparison-title">Сравнение потребления ресурсов</h3>
+                <p class="comparison-intro">Измерения лаунчеров в одинаковых условиях. Orvex измерялся в свернутом и бездействующем состоянии.</p>
+                <div class="comparison-table-wrap">
+                    <table dir="ltr">
+                        <caption class="comparison-note">Записанные значения; это не тест FPS в игре.</caption>
+                        <thead>
+                            <tr><th scope="col">Показатель</th><th scope="col">Dawn Client</th><th scope="col">Norisk Client</th><th scope="col">Orvex Client</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><th scope="row">CPU</th><td>0.1%</td><td>5%</td><td class="orvex-value">0%*</td></tr>
+                            <tr><th scope="row">GPU</th><td>0.1%</td><td>6%</td><td class="orvex-value">0%*</td></tr>
+                            <tr><th scope="row">RAM</th><td>200 МБ</td><td>450 МБ</td><td class="orvex-value">100 МБ*</td></tr>
+                            <tr><th scope="row">Плавность работы лаунчера</th><td>Тормозит</td><td>Плавно</td><td class="orvex-value">Очень плавно</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p class="comparison-hardware"><strong>Система:</strong> Windows 10, 16 ГБ RAM, Intel Core i7 11-го поколения, 2.80 ГГц, встроенная графика Intel Iris Xe.</p>
+                <p class="comparison-note">* Orvex измерялся свернутым и бездействующим. Результаты зависят от системы и нагрузки. Низкое потребление лаунчера оставляет больше ресурсов игре, но не гарантирует конкретный FPS или игровой результат.</p>
+            </section>
         </div>
     </section>
 
@@ -844,7 +880,7 @@
         <div class="container">
             <div class="section-header centered">
                 <h2>Знакомьтесь с <span class="accent">командой</span></h2>
-                <p>Два разработчика, один лаунчер и неразумное количество бессонных ночей</p>
+                <p>Небольшая команда, создающая удобный способ запускать Minecraft.</p>
                 <span class="accent-divider"></span>
             </div>
             <div class="team-grid">
@@ -854,7 +890,6 @@
                     </div>
                     <h3>IlayHamood</h3>
                     <div class="role">Ведущий разработчик<br>Лаунчер для macOS<br>Клиентский мод</div>
-                    <div class="tagline">«Вы пробовали выключить и снова включить?»</div>
                 </div>
                 <div class="team-card">
                     <div class="team-avatar">
@@ -862,7 +897,6 @@
                     </div>
                     <h3>LashedLime</h3>
                     <div class="role">Лаунчер для Windows<br>Клиентский мод<br>Веб-сайт</div>
-                    <div class="tagline">«На моем компьютере всё работает».</div>
                 </div>
             </div>
         </div>
@@ -881,7 +915,7 @@
                         игру со своими модами.
                     </p>
                     <p style="font-style: italic; color: var(--text-dim);">
-                        Поддержка macOS находится в разработке. Всё идет хорошо. Наверное.
+                        Поддержка macOS находится в разработке.
                     </p>
                 </div>
             </div>
@@ -894,8 +928,7 @@
             <div class="section-header centered">
                 <h2>Скачать <span class="accent">Orvex Client</span></h2>
                 <p class="download-lead">
-                    Один лаунчер, который делает всё: авторизация, установка Minecraft,
-                    загрузчик модов Fabric, среда Java и управление модами. Ручная настройка не требуется.
+                    Легкий лаунчер для входа в аккаунт, установки Minecraft и Fabric, настройки Java и управления модами.
                 </p>
                 <span class="accent-divider"></span>
             </div>
@@ -963,11 +996,6 @@
                 <a href="terms.html">Условия использования</a>
                 <a href="privacy.html">Политика конфиденциальности</a>
             </div>
-            <p class="legal-fineprint">
-                Некоторые заявления на этой странице являются шуткой.
-                Рак души не является реальным заболеванием. Пожалуйста, не обращайтесь к лаунчеру
-                за медицинскими консультациями. Шутка смешная, хе-хе-хе-хе-хе.
-            </p>
         </div>
     </footer>
 
