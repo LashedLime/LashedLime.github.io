@@ -16,8 +16,9 @@
 			<a class="logo" href="/ja/"><img src="icon.ico" alt="" /><span>Orvex Client</span></a>
 			<nav aria-label="メインナビゲーション">
 				<a href="#features">特徴</a>
-				<a href="#comparison">比較</a>
+				<a href="#team">チーム</a>
 				<a href="#download">ダウンロード</a>
+				<a href="https://github.com/LashedLime" target="_blank" rel="noopener noreferrer"><i class="fab fa-github" aria-hidden="true"></i> ソース</a>
 				<details class="language-menu">
 					<summary aria-label="言語を選択"><i class="fas fa-globe" aria-hidden="true"></i> 言語</summary>
 					<div class="language-menu-list">
@@ -34,59 +35,126 @@
 	<main>
 		<section class="hero">
 			<div class="hero-content">
-				<span class="badge">早期アクセス · v1.0</span>
+				<div class="badge">早期アクセス · v1.0</div>
 				<h1>ゲームの邪魔をしない<br /><span class="accent">軽量 Minecraft ランチャー</span></h1>
 				<p>Minecraft と Fabric のインストール、Microsoft アカウントでのサインイン、Mod の管理をひとつのランチャーで。Orvex はリソース消費を抑え、ゲームにより多くのPCリソースを使えるよう設計されています。</p>
-				<div class="actions">
-					<a class="button" href="#download"><i class="fas fa-download" aria-hidden="true"></i> Orvexについて</a>
-					<a class="button secondary" href="#features">機能を見る</a>
+				<div class="hero-actions">
+					<a href="#download" class="btn"><i class="fas fa-download" aria-hidden="true"></i> ダウンロード</a>
+					<a href="#features" class="btn btn-outline"><i class="fas fa-circle-info" aria-hidden="true"></i> 詳しく見る</a>
 				</div>
-				<p class="hero-note">広告・テレメトリーなし。ゲームファイルは標準の .minecraft フォルダーとは別に保存されます。</p>
+				<p class="hero-subtle">広告・テレメトリーなし。ゲームファイルは標準の .minecraft フォルダーとは別に保存されます。</p>
 			</div>
 		</section>
 
-		<section class="content" id="features">
+		<section class="features" id="features">
 			<div class="container">
-				<div class="section-heading"><h2>Orvexでできること</h2><p>必要な機能を備え、ゲーム中の余計な負荷を抑えます。</p></div>
+				<div class="section-header centered">
+					<h2>Orvexで <span class="accent">できること</span></h2>
+					<p>必要な機能を備え、ゲーム中の余計な負荷を抑えます。</p>
+					<span class="accent-divider"></span>
+				</div>
 				<div class="grid">
-					<article class="card"><i class="fas fa-shield-halved" aria-hidden="true"></i><h3>安全なサインイン</h3><p>Microsoft アカウントでサインイン。パスワードを Orvex が扱うことはありません。</p></article>
-					<article class="card"><i class="fas fa-box" aria-hidden="true"></i><h3>独立したゲーム環境</h3><p>Minecraft、Fabric、ゲームアセット、Java を Orvex 専用フォルダーにインストールし、既存の環境を変更しません。</p></article>
-					<article class="card"><i class="fas fa-feather" aria-hidden="true"></i><h3>軽量設計</h3><p>待機中のリソース使用を抑え、Minecraft に使えるPCリソースを確保します。</p></article>
-					<article class="card"><i class="fas fa-wrench" aria-hidden="true"></i><h3>ワンクリック修復</h3><p>不足または破損したランチャーファイルを、手動で整理せずに修復できます。</p></article>
+					<div class="card"><i class="fas fa-shield-halved" aria-hidden="true"></i><h3>安全なサインイン</h3><p>Microsoft アカウントで安全にサインイン。パスワードを Orvex が扱うことはありません。</p></div>
+					<div class="card"><i class="fas fa-box" aria-hidden="true"></i><h3>独立したゲーム環境</h3><p>Minecraft、Fabric、ゲームアセット、Java を Orvex 専用フォルダーにインストールし、既存の環境を変更しません。</p></div>
+					<div class="card"><i class="fas fa-feather" aria-hidden="true"></i><h3>軽量設計</h3><p>待機中のリソース使用を抑え、Minecraft に使えるPCリソースを確保します。</p></div>
+					<div class="card"><i class="fas fa-wrench" aria-hidden="true"></i><h3>ワンクリック修復</h3><p>不足または破損したランチャーファイルを、手動で整理せずに修復できます。</p></div>
 				</div>
 
-				<section class="comparison" id="comparison" aria-labelledby="comparison-title">
+				<section class="comparison" aria-labelledby="comparison-title">
 					<h3 id="comparison-title">ランチャーのリソース使用量比較</h3>
 					<p class="comparison-intro">同じシステムで記録したランチャーの使用量です。Orvex は最小化し、アイドル状態で測定しました。</p>
-					<div class="table-wrap">
+					<div class="comparison-table-wrap">
 						<table>
-							<caption class="note">記録値です。ゲーム内のFPS比較ではありません。</caption>
+							<caption class="comparison-note">記録値です。ゲーム内のFPS比較ではありません。</caption>
 							<thead><tr><th scope="col">項目</th><th scope="col">Dawn Client</th><th scope="col">Norisk Client</th><th scope="col">Orvex Client</th></tr></thead>
 							<tbody>
-								<tr><th scope="row">CPU</th><td>0.1%</td><td>5%</td><td class="orvex">0%*</td></tr>
-								<tr><th scope="row">GPU</th><td>0.1%</td><td>6%</td><td class="orvex">0%*</td></tr>
-								<tr><th scope="row">RAM</th><td>200 MB</td><td>450 MB</td><td class="orvex">100 MB*</td></tr>
-								<tr><th scope="row">ランチャーの動作</th><td>遅い・カクつく</td><td>スムーズ</td><td class="orvex">とてもスムーズ</td></tr>
+								<tr><th scope="row">CPU</th><td>0.1%</td><td>5%</td><td class="orvex-value">0%*</td></tr>
+								<tr><th scope="row">GPU</th><td>0.1%</td><td>6%</td><td class="orvex-value">0%*</td></tr>
+								<tr><th scope="row">RAM</th><td>200 MB</td><td>450 MB</td><td class="orvex-value">100 MB*</td></tr>
+								<tr><th scope="row">ランチャーの動作</th><td>遅い・カクつく</td><td>スムーズ</td><td class="orvex-value">とてもスムーズ</td></tr>
 							</tbody>
 						</table>
 					</div>
-					<p class="hardware"><strong>測定環境：</strong>Windows 10、RAM 16 GB、第11世代 Intel Core i7（2.80 GHz）、内蔵 Intel Iris Xe Graphics。</p>
-					<p class="note">* Orvex は最小化・アイドル状態で測定。値はシステムや使用状況により変動します。ランチャーの使用量が少ないことはゲームに使えるリソースを増やす意図がありますが、特定のFPSやゲーム性能を保証するものではありません。</p>
+					<p class="comparison-hardware"><strong>測定環境：</strong>Windows 10、RAM 16 GB、第11世代 Intel Core i7（2.80 GHz）、内蔵 Intel Iris Xe Graphics。</p>
+					<p class="comparison-note">* Orvex は最小化・アイドル状態で測定。値はシステムや使用状況により変動します。ランチャーの使用量が少ないことはゲームに使えるリソースを増やす意図がありますが、特定のFPSやゲーム性能を保証するものではありません。</p>
 				</section>
 			</div>
 		</section>
 
-		<section class="download" id="download">
-			<h2>Orvex Client</h2>
-			<p>Minecraft Java Edition 向けの Windows ランチャーです。最新情報やソースコードは GitHub をご確認ください。</p>
-			<a class="button" href="https://github.com/LashedLime" target="_blank" rel="noopener noreferrer"><i class="fab fa-github" aria-hidden="true"></i> GitHubを見る</a>
+		<section class="team" id="team">
+			<div class="container">
+				<div class="section-header centered">
+					<h2><span class="accent">チーム</span>紹介</h2>
+					<p>Minecraftをもっと簡単に起動できるよう、小さなチームで開発しています。</p>
+					<span class="accent-divider"></span>
+				</div>
+				<div class="team-grid">
+					<div class="team-card">
+						<div class="team-avatar"><img src="https://cdn.discordapp.com/avatars/1374683698376474675/10ab7bdda3a211a7bcbc0f5892bb81ac.webp" alt="IlayHamood" /></div>
+						<h3>IlayHamood</h3>
+						<div class="role">リード開発者<br />macOSランチャー<br />クライアントMod</div>
+					</div>
+					<div class="team-card">
+						<div class="team-avatar"><img src="csharp.png" alt="LashedLime" /></div>
+						<h3>LashedLime</h3>
+						<div class="role">Windowsランチャー<br />クライアントMod<br />ウェブサイト</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="status-section">
+			<div class="container">
+				<div class="status-box">
+					<i class="fas fa-circle-info" aria-hidden="true"></i>
+					<div>
+						<strong>早期アクセス</strong>
+						<p>Orvex Client は現在ご利用いただけます。サインインして Minecraft と Fabric を自動でインストールし、Mod を使ってゲームを起動できます。</p>
+						<p class="status-note">macOS版は現在開発中です。</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="download-section" id="download">
+			<div class="download-inner">
+				<div class="section-header centered">
+					<h2>Orvex Client を<span class="accent">入手</span></h2>
+					<p class="download-lead">Microsoft サインイン、Minecraft と Fabric のインストール、Java のセットアップ、Mod 管理に対応した軽量ランチャーです。</p>
+					<span class="accent-divider"></span>
+				</div>
+				<div class="download-cta-wrapper">
+					<div class="download-pill">
+						<a href="#" class="download-pill-main">ダウンロード</a>
+						<div class="download-pill-divider"></div>
+						<div class="download-dropdown">
+							<a href="#" class="download-pill-alt">.exe (Windows)<i class="fas fa-chevron-down chevron" aria-hidden="true"></i></a>
+							<div class="download-dropdown-menu">
+								<a href="#" class="download-dropdown-item"><i class="fa-brands fa-windows" aria-hidden="true"></i><span>.exe (Windows)</span><span class="meta">v1.0.0 · 約45 MB</span></a>
+								<a href="#" class="download-dropdown-item"><i class="fa-brands fa-apple" aria-hidden="true"></i><span>.dmg (macOS)</span><span class="disabled-tag">近日公開</span></a>
+								<a href="https://github.com/LashedLime" target="_blank" rel="noopener noreferrer" class="download-dropdown-item"><i class="fab fa-github" aria-hidden="true"></i><span>ソースコード</span><span class="meta">GitHub</span></a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<p class="download-note">Windows 10 / 11 · 64-bit</p>
+				<div class="download-info-grid">
+					<div class="download-info"><i class="fas fa-bolt" aria-hidden="true"></i><h3>簡単セットアップ</h3><p>一度サインインすれば、初回のプレイ時に Minecraft、Fabric、Java を自動でダウンロードします。</p></div>
+					<div class="download-info"><i class="fas fa-hard-drive" aria-hidden="true"></i><h3>独立した環境</h3><p>すべてのファイルは <code>%AppData%\.orvex</code> に保存されます。既存の <code>.minecraft</code> フォルダーは変更されません。</p></div>
+					<div class="download-info"><i class="fas fa-shield-halved" aria-hidden="true"></i><h3>テレメトリーなし</h3><p>分析やデータ収集は行いません。アクセストークンがお使いのPCから外部に送信されることもありません。</p></div>
+				</div>
+			</div>
 		</section>
 	</main>
 
 	<footer>
 		<div class="container">
 			<p>Orvex Client · Mojang および Microsoft とは提携していません。</p>
-			<div class="footer-links"><a href="terms.html">利用規約</a><a href="privacy.html">プライバシーポリシー</a><a href="https://github.com/LashedLime" target="_blank" rel="noopener noreferrer">GitHub</a></div>
+			<div class="footer-links">
+				<a href="https://github.com/LashedLime" target="_blank" rel="noopener noreferrer">GitHub</a>
+				<a href="terms.html">利用規約</a>
+				<a href="privacy.html">プライバシーポリシー</a>
+			</div>
 		</div>
 	</footer>
 </body>
