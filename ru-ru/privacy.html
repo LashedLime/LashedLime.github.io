@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Политика конфиденциальности – Orvex Client</title>
+	<link rel="icon" type="image/x-icon" href="icon.ico" />
+	<style>
+		* { margin: 0; padding: 0; box-sizing: border-box; }
+		body {
+			font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+			background-color: #14161c;
+			color: #e8d5d8;
+			line-height: 1.7;
+			padding: 40px 20px;
+		}
+		.container { max-width: 800px; margin: 0 auto; }
+		h1 { font-size: 2rem; color: #30c7ba; margin-bottom: 8px; }
+		.last-updated { color: #6b6f7a; font-size: 0.9rem; margin-bottom: 30px; }
+		h2 { font-size: 1.3rem; color: #30c7ba; margin-top: 30px; margin-bottom: 10px; }
+		p, li { color: #b0b0b0; margin-bottom: 12px; }
+		ul { padding-left: 24px; margin-bottom: 12px; }
+		a { color: #30c7ba; text-decoration: none; }
+		a:hover { color: #1e746f; }
+		.back-link { display: inline-block; margin-bottom: 20px; font-weight: 600; }
+		footer {
+			margin-top: 50px;
+			padding-top: 20px;
+			border-top: 1px solid #25282e;
+			color: #6b6f7a;
+			font-size: 0.9rem;
+			text-align: center;
+		}
+		.highlight {
+			background: #1e1f26;
+			border-left: 4px solid #30c7ba;
+			padding: 15px 20px;
+			border-radius: 6px;
+			margin: 20px 0;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<a href="index.html" class="back-link">← Вернуться на сайт Orvex Client</a>
+
+		<h1>Политика конфиденциальности</h1>
+		<p class="last-updated">Последнее обновление: август 2026 г.</p>
+
+		<div class="highlight">
+			<p><strong>Кратко:</strong> Orvex Client не собирает, не хранит и не передает персональные данные. Ваш пароль Microsoft никогда не проходит через наш лаунчер. Вся аутентификация выполняется напрямую Microsoft.</p>
+		</div>
+
+		<h2>1. Какие данные мы НЕ собираем</h2>
+		<p>Orvex Client <strong>не</strong> собирает, не хранит и не передает следующие данные:</p>
+		<ul>
+			<li>Адрес электронной почты или пароль вашей учетной записи Microsoft</li>
+			<li>Имя пользователя Minecraft, UUID или токен доступа (кроме локального хранения для запуска игры)</li>
+			<li>Ваш IP-адрес</li>
+			<li>Информацию об оборудовании</li>
+			<li>Статистику игрового процесса или активность на серверах</li>
+		</ul>
+
+		<h2>2. Аутентификация</h2>
+		<p>Аутентификация полностью выполняется через официальную страницу входа Microsoft с использованием OAuth 2.0. При входе вы перенаправляетесь на серверы Microsoft, где вводите свои учетные данные. Orvex Client никогда не видит ваш пароль.</p>
+		<p>После успешного входа Microsoft предоставляет лаунчеру временные токены доступа. Они хранятся <strong>только локально на вашем компьютере</strong> (в папке конфигурации лаунчера), чтобы вам не приходилось входить каждый раз. Эти токены никогда не отправляются на серверы команды Orvex Client.</p>
+
+		<h2>3. Локальное хранение данных</h2>
+		<p>Лаунчер хранит только на вашем компьютере следующие данные:</p>
+		<ul>
+			<li>Токен доступа Microsoft и токен обновления (зашифрованы с помощью MSAL)</li>
+			<li>Настройки лаунчера (путь к Java, выделение памяти и т. д.)</li>
+			<li>Настройки модов (состояние модулей, клавиши быстрого доступа)</li>
+		</ul>
+		<p>Эти данные никогда не покидают ваш компьютер.</p>
+
+		<h2>4. Сторонние сервисы</h2>
+		<p>Orvex Client взаимодействует только со следующими официальными сервисами:</p>
+		<ul>
+			<li><strong>Microsoft Identity Platform</strong> (login.microsoftonline.com) — для аутентификации</li>
+			<li><strong>Xbox Live</strong> (xboxlive.com) — для проверки учетной записи</li>
+			<li><strong>Minecraft Services API</strong> (api.minecraftservices.com) — для получения токенов запуска игры</li>
+			<li><strong>Mojang Resources</strong> (resources.download.minecraft.net) — для загрузки игровых ресурсов</li>
+		</ul>
+		<p>Мы не используем сервисы аналитики, рекламы или отслеживания.</p>
+
+		<h2>5. Удаление данных</h2>
+		<p>Вы можете в любое время удалить все данные, хранящиеся локально:</p>
+		<ul>
+			<li>Нажмите кнопку «Выйти» в лаунчере (удаляет токены)</li>
+			<li>Удалите папку конфигурации лаунчера (%AppData%\OrvexClient)</li>
+		</ul>
+
+		<h2>6. Конфиденциальность детей</h2>
+		<p>Orvex Client сознательно не собирает информацию ни о ком. Приложение подходит для всех возрастов.</p>
+
+		<h2>7. Изменения политики</h2>
+		<p>Мы можем время от времени обновлять настоящую Политику конфиденциальности. Все изменения будут опубликованы на этой странице.</p>
+
+		<h2>8. Контакты</h2>
+		<p>Если у вас есть вопросы об этой Политике конфиденциальности, создайте issue в нашем <a href="https://github.com/LashedLime" target="_blank" rel="noopener noreferrer">репозитории GitHub</a>.</p>
+
+		<footer>Orvex Client · Не связан с Mojang или Microsoft.</footer>
+	</div>
+</body>
+</html>

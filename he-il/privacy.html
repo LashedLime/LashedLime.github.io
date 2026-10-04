@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>מדיניות פרטיות – Orvex Client</title>
+	<link rel="icon" type="image/x-icon" href="icon.ico" />
+	<style>
+		* { margin: 0; padding: 0; box-sizing: border-box; }
+		body {
+			font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+			background-color: #14161c;
+			color: #e8d5d8;
+			line-height: 1.7;
+			padding: 40px 20px;
+		}
+		.container { max-width: 800px; margin: 0 auto; }
+		h1 { font-size: 2rem; color: #30c7ba; margin-bottom: 8px; }
+		.last-updated { color: #6b6f7a; font-size: 0.9rem; margin-bottom: 30px; }
+		h2 { font-size: 1.3rem; color: #30c7ba; margin-top: 30px; margin-bottom: 10px; }
+		p, li { color: #b0b0b0; margin-bottom: 12px; }
+		ul { padding-right: 24px; margin-bottom: 12px; }
+		a { color: #30c7ba; text-decoration: none; }
+		a:hover { color: #1e746f; }
+		.back-link { display: inline-block; margin-bottom: 20px; font-weight: 600; }
+		footer {
+			margin-top: 50px;
+			padding-top: 20px;
+			border-top: 1px solid #25282e;
+			color: #6b6f7a;
+			font-size: 0.9rem;
+			text-align: center;
+		}
+		.highlight {
+			background: #1e1f26;
+			border-right: 4px solid #30c7ba;
+			padding: 15px 20px;
+			border-radius: 6px;
+			margin: 20px 0;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<a href="index.html" class="back-link">חזרה אל Orvex Client ←</a>
+
+		<h1>מדיניות פרטיות</h1>
+		<p class="last-updated">עדכון אחרון: אוגוסט 2026</p>
+
+		<div class="highlight">
+			<p><strong>בקצרה:</strong> Orvex Client אינו אוסף, שומר או משתף מידע אישי. סיסמת Microsoft שלכם לעולם אינה עוברת דרך המפעיל. כל תהליך האימות מתבצע ישירות מול Microsoft.</p>
+		</div>
+
+		<h2>1. מידע שאיננו אוספים</h2>
+		<p>Orvex Client <strong>אינו</strong> אוסף, שומר או משדר אף אחד מהפרטים הבאים:</p>
+		<ul>
+			<li>כתובת הדוא"ל או הסיסמה של חשבון Microsoft שלכם</li>
+			<li>שם המשתמש שלכם ב-Minecraft, מזהה UUID או אסימון גישה (למעט אחסון מקומי לצורך הפעלת המשחק)</li>
+			<li>כתובת ה-IP שלכם</li>
+			<li>מידע על החומרה שלכם</li>
+			<li>נתוני המשחק שלכם או הפעילות שלכם בשרתים</li>
+		</ul>
+
+		<h2>2. אימות</h2>
+		<p>האימות מתבצע כולו דרך דף הכניסה הרשמי של Microsoft המשתמש ב-OAuth 2.0. בעת התחברות, אתם מופנים לשרתים של Microsoft, שם אתם מזינים את פרטי הכניסה שלכם. Orvex Client לעולם אינו רואה את הסיסמה שלכם.</p>
+		<p>לאחר התחברות מוצלחת, Microsoft מספקת למפעיל אסימוני גישה זמניים. אסימונים אלה נשמרים <strong>באופן מקומי במחשב שלכם</strong> (בתיקיית התצורה של המפעיל), כדי שלא תצטרכו להתחבר בכל פעם. הם לעולם אינם נשלחים לשרת כלשהו שבבעלות צוות Orvex Client.</p>
+
+		<h2>3. אחסון נתונים מקומי</h2>
+		<p>המפעיל שומר את הנתונים הבאים במחשב המקומי שלכם בלבד:</p>
+		<ul>
+			<li>אסימון הגישה ואסימון הרענון של Microsoft (מוצפנים באמצעות MSAL)</li>
+			<li>הגדרות המפעיל (נתיב Java, הקצאת זיכרון וכדומה)</li>
+			<li>תצורת המודים שלכם (מצבי מודולים, קיצורי מקשים)</li>
+		</ul>
+		<p>נתונים אלה לעולם אינם יוצאים מהמחשב שלכם.</p>
+
+		<h2>4. שירותי צד שלישי</h2>
+		<p>Orvex Client מתקשר רק עם השירותים הרשמיים הבאים:</p>
+		<ul>
+			<li><strong>Microsoft Identity Platform</strong> (login.microsoftonline.com) – לצורך אימות</li>
+			<li><strong>Xbox Live</strong> (xboxlive.com) – לצורך אימות החשבון</li>
+			<li><strong>Minecraft Services API</strong> (api.minecraftservices.com) – לצורך אסימוני הפעלת המשחק</li>
+			<li><strong>Mojang Resources</strong> (resources.download.minecraft.net) – להורדת נכסי המשחק</li>
+		</ul>
+		<p>איננו משלבים שירותי ניתוח נתונים, פרסום או מעקב.</p>
+
+		<h2>5. מחיקת נתונים</h2>
+		<p>ניתן למחוק את כל הנתונים המאוחסנים מקומית בכל עת באמצעות:</p>
+		<ul>
+			<li>שימוש בלחצן "התנתקות" במפעיל (מסיר את האסימונים)</li>
+			<li>מחיקת תיקיית התצורה של המפעיל (%AppData%\OrvexClient)</li>
+		</ul>
+
+		<h2>6. פרטיות ילדים</h2>
+		<p>Orvex Client אינו אוסף ביודעין מידע מאיש. הוא מתאים לכל הגילים.</p>
+
+		<h2>7. שינויים במדיניות זו</h2>
+		<p>ייתכן שנעדכן את מדיניות הפרטיות מעת לעת. כל שינוי יפורסם בעמוד זה.</p>
+
+		<h2>8. יצירת קשר</h2>
+		<p>לשאלות בנוגע למדיניות פרטיות זו, פתחו issue במאגר GitHub שלנו: <a href="https://github.com/LashedLime" target="_blank" rel="noopener noreferrer">מאגר GitHub</a>.</p>
+
+		<footer>Orvex Client · אינו קשור ל-Mojang או ל-Microsoft.</footer>
+	</div>
+</body>
+</html>
