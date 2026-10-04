@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ja" class="page-ja-privacy">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>プライバシーポリシー – Orvex Client</title>
+    <link rel="stylesheet" href="/style.css" />
+	<link rel="icon" type="image/x-icon" href="icon.ico" />
+
+</head>
+<body>
+	<div class="container">
+		<a href="index.html" class="back-link">← Orvex Client に戻る</a>
+		<h1>プライバシーポリシー</h1>
+		<p class="last-updated">最終更新日：2026年8月</p>
+
+		<div class="highlight"><p><strong>概要：</strong>Orvex Client は個人データを収集、保存、共有しません。Microsoft のパスワードがランチャーに渡ることはありません。認証はすべて Microsoft が直接処理します。</p></div>
+
+		<h2>1. 収集しない情報</h2>
+		<p>Orvex Client は、以下の情報を<strong>収集、保存、送信しません</strong>。</p>
+		<ul>
+			<li>Microsoft アカウントのメールアドレスまたはパスワード</li>
+			<li>Minecraft のユーザー名、UUID、アクセス トークン（ゲーム起動のためローカルで保存する場合を除く）</li>
+			<li>IP アドレス</li>
+			<li>ハードウェア情報</li>
+			<li>ゲームの統計情報やサーバー上の活動</li>
+		</ul>
+
+		<h2>2. 認証</h2>
+		<p>認証は Microsoft の公式 OAuth 2.0 サインインページを通じて行われます。サインイン時は Microsoft のサーバーに移動し、そこで認証情報を入力します。Orvex Client がパスワードを見ることはありません。</p>
+		<p>サインインが完了すると、Microsoft は一時的なアクセス トークンをランチャーに提供します。毎回サインインしなくて済むよう、トークンは<strong>お使いのコンピューター上（ランチャーの設定フォルダー内）にのみ</strong>保存されます。Orvex Client チームが所有するサーバーに送信されることはありません。</p>
+
+		<h2>3. ローカルデータの保存</h2>
+		<p>ランチャーは以下のデータのみをお使いのコンピューターに保存します。</p>
+		<ul>
+			<li>Microsoft のアクセス トークンとリフレッシュ トークン（MSAL により暗号化）</li>
+			<li>ランチャーの設定（Java のパス、メモリ割り当てなど）</li>
+			<li>Mod の設定（モジュールの状態、キー割り当て）</li>
+		</ul>
+		<p>これらのデータがコンピューターの外に送信されることはありません。</p>
+
+		<h2>4. サードパーティ サービス</h2>
+		<p>Orvex Client は以下の公式サービスとのみ通信します。</p>
+		<ul>
+			<li><strong>Microsoft Identity Platform</strong>（login.microsoftonline.com）— 認証</li>
+			<li><strong>Xbox Live</strong>（xboxlive.com）— アカウント確認</li>
+			<li><strong>Minecraft Services API</strong>（api.minecraftservices.com）— ゲーム起動トークン</li>
+			<li><strong>Mojang Resources</strong>（resources.download.minecraft.net）— ゲームアセットのダウンロード</li>
+		</ul>
+		<p>分析、広告、追跡サービスは利用していません。</p>
+
+		<h2>5. データの削除</h2>
+		<p>以下の方法で、ローカルに保存されたデータをいつでも削除できます。</p>
+		<ul>
+			<li>ランチャーの「ログアウト」ボタンを使用する（トークンを削除）</li>
+			<li>ランチャーの設定フォルダー（%AppData%\OrvexClient）を削除する</li>
+		</ul>
+
+		<h2>6. 子どものプライバシー</h2>
+		<p>Orvex Client は、誰からも情報を故意に収集しません。年齢を問わずご利用いただけます。</p>
+
+		<h2>7. 本ポリシーの変更</h2>
+		<p>プライバシーポリシーを随時更新することがあります。変更はこのページに掲載します。</p>
+
+		<h2>8. お問い合わせ</h2>
+		<p>本ポリシーについて質問がある場合は、<a href="https://github.com/LashedLime" target="_blank" rel="noopener noreferrer">GitHub リポジトリ</a>で issue を作成してください。</p>
+
+		<footer>Orvex Client · Mojang および Microsoft とは提携していません。</footer>
+	</div>
+</body>
+</html>
