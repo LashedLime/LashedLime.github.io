@@ -2498,7 +2498,9 @@ html.page-ja body {
 .page-he .download-pill-main:hover, .page-he .download-pill-alt:hover { background: #00d4b8; }
 .page-en .download-pill-divider, .page-ru .download-pill-divider, .page-he .download-pill-divider { background: rgba(20, 22, 28, .35); }
 .page-en .download-dropdown-menu, .page-ru .download-dropdown-menu, .page-he .download-dropdown-menu { background: #23252d; border-color: #3a3d47; box-shadow: 0 20px 48px rgba(0, 0, 0, .7), 0 0 0 1px rgba(48, 199, 186, .12); }
-.page-en .download-dropdown-item, .page-ru .download-dropdown-item, .page-he .download-dropdown-item { color: #f0dde0; }
+.page-en .download-dropdown-item, .page-en .download-dropdown-item:link, .page-en .download-dropdown-item:visited,
+.page-ru .download-dropdown-item, .page-ru .download-dropdown-item:link, .page-ru .download-dropdown-item:visited,
+.page-he .download-dropdown-item, .page-he .download-dropdown-item:link, .page-he .download-dropdown-item:visited { color: #f0dde0 !important; }
 .page-en .download-dropdown-item i, .page-ru .download-dropdown-item i, .page-he .download-dropdown-item i { color: #30c7ba; }
 .page-en .download-dropdown-item:hover, .page-ru .download-dropdown-item:hover, .page-he .download-dropdown-item:hover { background: #30c7ba; color: #14161c !important; }
 .page-en .download-dropdown-item:hover i, .page-ru .download-dropdown-item:hover i, .page-he .download-dropdown-item:hover i { color: #14161c !important; }
