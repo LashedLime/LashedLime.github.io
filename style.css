@@ -3,30 +3,30 @@
 
 
         :root.page-en{
-            --bg-window:      #14161c;
-            --bg-surface:     #1a1c22;
-            --bg-surface-alt: #1e1f26;
-            --bg-elevated:    #23252d;
-            --bg-hover:       #2a2d36;
+            --bg-window:      #F3F6F5;
+            --bg-surface:     #FFFFFF;
+            --bg-surface-alt: #E9EFED;
+            --bg-elevated:    #FFFFFF;
+            --bg-hover:       #E0F3EA;
 
-            --border-subtle:  #2e3138;
-            --border-strong:  #3a3d47;
+            --border-subtle:  #D7E1DD;
+            --border-strong:  #B8C8C1;
 
-            --accent:         #30c7ba;
-            --accent-dark:    #1e746f;
-            --accent-hover:   #00D4B8;
-            --accent-press:   #165d59;
+            --accent:         #168B68;
+            --accent-dark:    #0F6C51;
+            --accent-hover:   #25A77D;
+            --accent-press:   #0F6C51;
 
-            --text-primary:   #F0DDE0;
-            --text-body:      #C9C4D0;
-            --text-muted:     #A5A3B0;
-            --text-dim:       #8A8D99;
+            --text-primary:   #17231F;
+            --text-body:      #34443D;
+            --text-muted:     #566760;
+            --text-dim:       #778780;
 
-            --danger:         #d96b6b;
-            --warning:        #f0b429;
+            --danger:         #D94C59;
+            --warning:        #EDBF64;
 
-            --radius-card:    8px;
-            --radius-button:  6px;
+            --radius-card:    18px;
+            --radius-button:  9px;
 
             --max-width:      1100px;
         }
@@ -791,30 +791,30 @@
 
 
         :root.page-ru{
-            --bg-window:      #14161c;
-            --bg-surface:     #1a1c22;
-            --bg-surface-alt: #1e1f26;
-            --bg-elevated:    #23252d;
-            --bg-hover:       #2a2d36;
+            --bg-window:      #F3F6F5;
+            --bg-surface:     #FFFFFF;
+            --bg-surface-alt: #E9EFED;
+            --bg-elevated:    #FFFFFF;
+            --bg-hover:       #E0F3EA;
 
-            --border-subtle:  #2e3138;
-            --border-strong:  #3a3d47;
+            --border-subtle:  #D7E1DD;
+            --border-strong:  #B8C8C1;
 
-            --accent:         #30c7ba;
-            --accent-dark:    #1e746f;
-            --accent-hover:   #00D4B8;
-            --accent-press:   #165d59;
+            --accent:         #168B68;
+            --accent-dark:    #0F6C51;
+            --accent-hover:   #25A77D;
+            --accent-press:   #0F6C51;
 
-            --text-primary:   #F0DDE0;
-            --text-body:      #C9C4D0;
-            --text-muted:     #A5A3B0;
-            --text-dim:       #8A8D99;
+            --text-primary:   #17231F;
+            --text-body:      #34443D;
+            --text-muted:     #566760;
+            --text-dim:       #778780;
 
-            --danger:         #d96b6b;
-            --warning:        #f0b429;
+            --danger:         #D94C59;
+            --warning:        #EDBF64;
 
-            --radius-card:    8px;
-            --radius-button:  6px;
+            --radius-card:    18px;
+            --radius-button:  9px;
 
             --max-width:      1100px;
         }
@@ -1564,30 +1564,30 @@
 
 
         :root.page-he{
-            --bg-window:      #14161c;
-            --bg-surface:     #1a1c22;
-            --bg-surface-alt: #1e1f26;
-            --bg-elevated:    #23252d;
-            --bg-hover:       #2a2d36;
+            --bg-window:      #F3F6F5;
+            --bg-surface:     #FFFFFF;
+            --bg-surface-alt: #E9EFED;
+            --bg-elevated:    #FFFFFF;
+            --bg-hover:       #E0F3EA;
 
-            --border-subtle:  #2e3138;
-            --border-strong:  #3a3d47;
+            --border-subtle:  #D7E1DD;
+            --border-strong:  #B8C8C1;
 
-            --accent:         #30c7ba;
-            --accent-dark:    #1e746f;
-            --accent-hover:   #00D4B8;
-            --accent-press:   #165d59;
+            --accent:         #168B68;
+            --accent-dark:    #0F6C51;
+            --accent-hover:   #25A77D;
+            --accent-press:   #0F6C51;
 
-            --text-primary:   #F0DDE0;
-            --text-body:      #C9C4D0;
-            --text-muted:     #A5A3B0;
-            --text-dim:       #8A8D99;
+            --text-primary:   #17231F;
+            --text-body:      #34443D;
+            --text-muted:     #566760;
+            --text-dim:       #778780;
 
-            --danger:         #d96b6b;
-            --warning:        #f0b429;
+            --danger:         #D94C59;
+            --warning:        #EDBF64;
 
-            --radius-card:    8px;
-            --radius-button:  6px;
+            --radius-card:    18px;
+            --radius-button:  9px;
 
             --max-width:      1100px;
         }
