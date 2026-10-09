@@ -2497,7 +2497,7 @@ html.page-ja body {
 }
 
 
-/* Match localized download colors to the launcher theme. */
+/* Match localized download colors to the client theme. */
 .page-en .download-pill, .page-ru .download-pill, .page-he .download-pill { background: var(--accent); box-shadow: 0 10px 32px rgba(22, 139, 104, .25); }
 .page-en .download-pill:hover, .page-ru .download-pill:hover, .page-he .download-pill:hover { box-shadow: 0 16px 44px rgba(22, 139, 104, .35); }
 .page-en .download-pill a, .page-en .download-pill a:link, .page-en .download-pill a:visited, .page-en .download-pill a:hover, .page-en .download-pill a:active, .page-en .download-pill a:focus,
