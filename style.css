@@ -2901,3 +2901,58 @@ html.page-ja-terms body, html.page-ja-privacy body {
     background: #E9EFED;
     border-color: #168B68;
 }
+
+.support-section {
+    padding: 0 0 72px;
+}
+.support-card {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 28px 32px;
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-card);
+    background: var(--bg-surface);
+}
+.support-icon {
+    display: grid;
+    place-items: center;
+    flex: 0 0 52px;
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
+    background: var(--bg-hover);
+    color: var(--accent);
+    font-size: 1.6rem;
+}
+.support-content {
+    flex: 1;
+}
+.support-content h2 {
+    margin: 0 0 4px;
+    color: var(--text-primary);
+    font-size: 1.25rem;
+}
+.support-content p {
+    margin: 0;
+    color: var(--text-body);
+    font-size: .95rem;
+}
+.support-button {
+    flex: 0 0 auto;
+    white-space: nowrap;
+}
+@media (max-width: 720px) {
+    .support-card {
+        flex-wrap: wrap;
+        gap: 14px;
+        padding: 22px;
+    }
+    .support-content {
+        flex-basis: calc(100% - 68px);
+    }
+    .support-button {
+        width: 100%;
+        justify-content: center;
+    }
+}
