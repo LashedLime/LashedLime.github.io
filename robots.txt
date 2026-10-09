@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://lashedlime.github.io/sitemap.xml

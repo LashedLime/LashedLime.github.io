@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+	<loc>https://lashedlime.github.io/</loc>
+	<xhtml:link rel="alternate" hreflang="en" href="https://lashedlime.github.io/" />
+	<xhtml:link rel="alternate" hreflang="he" href="https://lashedlime.github.io/he-il/" />
+	<xhtml:link rel="alternate" hreflang="ru" href="https://lashedlime.github.io/ru-ru/" />
+	<xhtml:link rel="alternate" hreflang="ja" href="https://lashedlime.github.io/ja/" />
+	<xhtml:link rel="alternate" hreflang="x-default" href="https://lashedlime.github.io/" />
+  </url>
+  <url>
+	<loc>https://lashedlime.github.io/he-il/</loc>
+	<xhtml:link rel="alternate" hreflang="en" href="https://lashedlime.github.io/" />
+	<xhtml:link rel="alternate" hreflang="he" href="https://lashedlime.github.io/he-il/" />
+	<xhtml:link rel="alternate" hreflang="ru" href="https://lashedlime.github.io/ru-ru/" />
+	<xhtml:link rel="alternate" hreflang="ja" href="https://lashedlime.github.io/ja/" />
+	<xhtml:link rel="alternate" hreflang="x-default" href="https://lashedlime.github.io/" />
+  </url>
+  <url>
+	<loc>https://lashedlime.github.io/ru-ru/</loc>
+	<xhtml:link rel="alternate" hreflang="en" href="https://lashedlime.github.io/" />
+	<xhtml:link rel="alternate" hreflang="he" href="https://lashedlime.github.io/he-il/" />
+	<xhtml:link rel="alternate" hreflang="ru" href="https://lashedlime.github.io/ru-ru/" />
+	<xhtml:link rel="alternate" hreflang="ja" href="https://lashedlime.github.io/ja/" />
+	<xhtml:link rel="alternate" hreflang="x-default" href="https://lashedlime.github.io/" />
+  </url>
+  <url>
+	<loc>https://lashedlime.github.io/ja/</loc>
+	<xhtml:link rel="alternate" hreflang="en" href="https://lashedlime.github.io/" />
+	<xhtml:link rel="alternate" hreflang="he" href="https://lashedlime.github.io/he-il/" />
+	<xhtml:link rel="alternate" hreflang="ru" href="https://lashedlime.github.io/ru-ru/" />
+	<xhtml:link rel="alternate" hreflang="ja" href="https://lashedlime.github.io/ja/" />
+	<xhtml:link rel="alternate" hreflang="x-default" href="https://lashedlime.github.io/" />
+  </url>
+</urlset>
