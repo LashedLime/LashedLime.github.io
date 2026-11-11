@@ -2962,3 +2962,285 @@ html.page-ja-terms body, html.page-ja-privacy body {
         justify-content: center;
     }
 }
+
+
+/* ==========================================================================
+   Orvex Client theme layer
+   Mirrors the in-client GUI (client/orvex/render/Theme.java): deep green-black
+   window, flat rectangular surfaces with a single-pixel frame, accent only
+   where something is active, no rounding, no shadows, no gradients.
+   Appended last so it wins over the per-language blocks above.
+   ========================================================================== */
+
+:root.page-en, :root.page-ru, :root.page-ja, :root.page-he,
+:root.page-en-terms, :root.page-en-privacy,
+:root.page-ru-terms, :root.page-ru-privacy,
+:root.page-he-terms, :root.page-he-privacy,
+:root.page-ja-terms, :root.page-ja-privacy {
+    --bg-window:      #101714;
+    --bg-surface:     #17231F;
+    --bg-surface-alt: #14201B;
+    --bg-elevated:    #17231F;
+    --bg-hover:       #17382E;
+
+    --border-subtle:  #2E4239;
+    --border-strong:  #3D564B;
+
+    --accent:         #168B68;
+    --accent-dark:    #0F6C51;
+    --accent-hover:   #25A77D;
+    --accent-press:   #0F6C51;
+
+    --text-primary:   #EFF5F2;
+    --text-body:      #C3D2CB;
+    --text-muted:     #A9BAB2;
+    --text-dim:       #7A8A83;
+
+    --danger:         #D94C59;
+    --warning:        #EDBF64;
+
+    --radius-card:    0px;
+    --radius-button:  0px;
+
+    color-scheme: dark;
+}
+
+/* Flat by decree: no rounded corners, no elevation, no gradient fills. */
+body *, body *::before, body *::after {
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    background-image: none !important;
+}
+
+html { scrollbar-color: #2E4239 #101714; }
+::selection { background: #168B68; color: #F3FBF7; }
+
+body {
+    background-color: #101714 !important;
+    background: #101714 !important;
+    color: #C3D2CB !important;
+}
+
+a { color: #25A77D !important; }
+a:hover { color: #3FB894 !important; }
+
+/* --- top bar ------------------------------------------------------------ */
+
+.top-stripe {
+    background: #168B68 !important;
+    height: 2px !important;
+}
+
+header {
+    background: #141F1A !important;
+    border-bottom: 1px solid #2E4239 !important;
+    padding: 12px 0 !important;
+}
+
+.logo { color: #EFF5F2 !important; letter-spacing: 0.01em !important; }
+.logo img {
+    border: 1px solid #2E4239 !important;
+    background: #0F1512 !important;
+    width: 28px !important;
+    height: 28px !important;
+}
+
+nav { gap: 2px !important; }
+nav a {
+    color: #A9BAB2 !important;
+    border: 1px solid transparent !important;
+    padding: 7px 12px !important;
+    transition: background 0.12s, color 0.12s, border-color 0.12s !important;
+}
+nav a:hover {
+    color: #EFF5F2 !important;
+    background: #17382E !important;
+    border-color: #2E4239 !important;
+}
+
+.language-menu summary {
+    background: #141F1A !important;
+    border: 1px solid #2E4239 !important;
+    color: #A9BAB2 !important;
+    padding: 7px 11px !important;
+}
+.language-menu summary:hover,
+.language-menu[open] summary,
+.language-menu summary:focus-visible {
+    border-color: #168B68 !important;
+    color: #25A77D !important;
+}
+.language-menu-list {
+    background: #17231F !important;
+    border: 1px solid #3D564B !important;
+    padding: 0 !important;
+    min-width: 172px !important;
+}
+.language-menu-list a {
+    color: #C3D2CB !important;
+    padding: 8px 12px !important;
+}
+.language-menu-list a + a { border-top: 1px solid #24352C !important; }
+.language-menu-list a:hover,
+.language-menu-list a:focus-visible {
+    background: #17382E !important;
+    color: #25A77D !important;
+}
+.language-menu-list a[aria-current="page"] { color: #25A77D !important; }
+
+/* --- hero: a single client window --------------------------------------- */
+
+.hero {
+    min-height: auto !important;
+    padding: 72px 24px 64px !important;
+    background: #101714 !important;
+}
+.hero-content {
+    max-width: 860px !important;
+    background: #17231F !important;
+    border: 1px solid #2E4239 !important;
+    border-top-color: #3D564B !important;
+    padding: 56px 48px 44px !important;
+}
+.hero h1 {
+    font-size: 2.9rem !important;
+    font-weight: 700 !important;
+    line-height: 1.2 !important;
+    letter-spacing: -0.015em !important;
+    color: #EFF5F2 !important;
+    margin-bottom: 18px !important;
+}
+/* Gradient text needs its fill restored once gradients are stripped. */
+.hero h1 .accent,
+.download-section h2 .accent,
+.section-header h2 .accent {
+    background: none !important;
+    -webkit-background-clip: border-box !important;
+    background-clip: border-box !important;
+    -webkit-text-fill-color: #25A77D !important;
+    color: #25A77D !important;
+}
+.hero p {
+    color: #C3D2CB !important;
+    font-size: 1.05rem !important;
+    max-width: 620px !important;
+    margin-bottom: 30px !important;
+}
+.hero-subtle { color: #7A8A83 !important; }
+
+.badge {
+    background: transparent !important;
+    border: 1px solid #168B68 !important;
+    color: #25A77D !important;
+    padding: 5px 10px !important;
+    letter-spacing: 0.12em !important;
+    margin-bottom: 20px !important;
+}
+
+/* --- buttons ------------------------------------------------------------ */
+
+.btn {
+    background: #168B68 !important;
+    border: 1px solid #25A77D !important;
+    color: #F3FBF7 !important;
+    height: 42px !important;
+    padding: 0 22px !important;
+    font-weight: 700 !important;
+    font-size: 0.92rem !important;
+    letter-spacing: 0.01em !important;
+}
+.btn:hover {
+    background: #25A77D !important;
+    border-color: #25A77D !important;
+    color: #F3FBF7 !important;
+}
+.btn:active {
+    background: #0F6C51 !important;
+    border-color: #0F6C51 !important;
+    color: #F3FBF7 !important;
+}
+.btn-outline {
+    background: transparent !important;
+    border: 1px solid #3D564B !important;
+    color: #EFF5F2 !important;
+}
+.btn-outline:hover {
+    background: #17382E !important;
+    border-color: #168B68 !important;
+    color: #EFF5F2 !important;
+}
+
+/* --- sections ----------------------------------------------------------- */
+
+.features {
+    background: #101714 !important;
+    border-top: 1px solid #2E4239 !important;
+    border-bottom: 1px solid #2E4239 !important;
+    padding: 72px 0 !important;
+}
+.team { padding: 72px 0 !important; background: #101714 !important; }
+
+.section-header { margin-bottom: 36px !important; }
+.section-header h2 {
+    color: #EFF5F2 !important;
+    font-size: 1.75rem !important;
+    letter-spacing: -0.01em !important;
+}
+.section-header p { color: #A9BAB2 !important; }
+.accent-divider {
+    width: 32px !important;
+    height: 2px !important;
+    background: #168B68 !important;
+    margin-top: 14px !important;
+}
+
+.grid { gap: 16px !important; }
+
+.card,
+.team-card,
+.download-info {
+    background: #17231F !important;
+    border: 1px solid #2E4239 !important;
+    padding: 22px 20px !important;
+}
+.card:hover,
+.team-card:hover,
+.download-info:hover {
+    border-color: #168B68 !important;
+    transform: none !important;
+}
+.card i, .download-info i { color: #25A77D !important; font-size: 1.25rem !important; }
+.card h3, .download-info h3, .team-card h3 { color: #EFF5F2 !important; }
+.card p, .download-info p, .team-card .role { color: #A9BAB2 !important; }
+.card .footnote, .comparison-note, .comparison-hardware, .status-note {
+    color: #7A8A83 !important;
+}
+
+/* --- comparison table --------------------------------------------------- */
+
+.comparison {
+    background: #17231F !important;
+    border: 1px solid #2E4239 !important;
+    padding: 22px !important;
+    margin-top: 36px !important;
+}
+.comparison h3 { color: #EFF5F2 !important; font-size: 1.2rem !important; }
+.comparison th, .comparison td {
+    border-bottom: 1px solid #24352C !important;
+    padding: 10px 14px !important;
+}
+.comparison thead th {
+    color: #7A8A83 !important;
+    font-size: 0.72rem !important;
+    letter-spacing: 0.08em !important;
+    text-transform: uppercase !important;
+    background: #14201B !important;
+}
+.comparison tbody th { color: #EFF5F2 !important; }
+.comparison td { color: #A9BAB2 !important; }
+.comparison tbody td.orvex-value {
+    color: #25A77D !important;
+    background: #132019 !important;
+}
+
+/* --- team -------------------------------------------------------------
