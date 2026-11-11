@@ -3461,3 +3461,12 @@ html.page-ja-terms body > .container, html.page-ja-privacy body > .container {
         padding: 22px 18px !important;
     }
 }
+
+/* --- layout: sections must not shrink inside the column flex body ------- */
+body > .top-stripe,
+body > header,
+body > section,
+body > footer { flex: 0 0 auto !important; }
+
+/* The glow pseudo-elements are gone, so nothing needs clipping any more. */
+.hero, .download-section { overflow: visible !important; }
