@@ -3050,7 +3050,7 @@ nav a {
     color: #A9BAB2 !important;
     border: 1px solid transparent !important;
     padding: 7px 12px !important;
-    transition: background 0.12s, color 0.12s, border-color 0.12s !important;
+    transition: none !important;
 }
 nav a:hover {
     color: #EFF5F2 !important;
