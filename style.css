@@ -3244,3 +3244,220 @@ nav a:hover {
 }
 
 /* --- team -------------------------------------------------------------
+   ------------------------------------------------------------------------ */
+
+.team-card { padding: 24px 20px !important; }
+.team-avatar {
+    border: 1px solid #168B68 !important;
+    background: #101714 !important;
+    width: 80px !important;
+    height: 80px !important;
+    margin-bottom: 14px !important;
+}
+
+/* --- support ------------------------------------------------------------ */
+
+.support-section { padding: 0 0 64px !important; }
+.support-card {
+    background: #17231F !important;
+    border: 1px solid #2E4239 !important;
+    padding: 22px 24px !important;
+}
+.support-icon {
+    background: #14201B !important;
+    border: 1px solid #2E4239 !important;
+    color: #25A77D !important;
+    width: 46px !important;
+    height: 46px !important;
+    flex-basis: 46px !important;
+    font-size: 1.3rem !important;
+}
+.support-content h2 { color: #EFF5F2 !important; font-size: 1.1rem !important; }
+.support-content p { color: #A9BAB2 !important; }
+
+/* --- status ------------------------------------------------------------- */
+
+.status-section { padding: 0 0 64px !important; }
+.status-box {
+    background: #17231F !important;
+    border: 1px solid #2E4239 !important;
+    border-left: 2px solid #EDBF64 !important;
+    padding: 20px 22px !important;
+}
+.status-box i { color: #EDBF64 !important; font-size: 1.2rem !important; }
+.status-box strong { color: #EFF5F2 !important; }
+.status-box p { color: #A9BAB2 !important; }
+/* --- download ----------------------------------------------------------- */
+
+.download-section {
+    min-height: auto !important;
+    padding: 76px 24px 68px !important;
+    background: #101714 !important;
+    border-top: 1px solid #2E4239 !important;
+    border-bottom: 1px solid #2E4239 !important;
+}
+.download-section h2 { color: #EFF5F2 !important; font-size: 2.1rem !important; }
+.download-section .download-lead { color: #A9BAB2 !important; margin-bottom: 32px !important; }
+
+.download-pill {
+    background: #168B68 !important;
+    border: 1px solid #25A77D !important;
+}
+.download-pill a,
+.download-pill a:link,
+.download-pill a:visited,
+.download-pill a:hover,
+.download-pill a:active,
+.download-pill a:focus { color: #F3FBF7 !important; }
+.download-pill-main,
+.download-pill-alt { padding: 16px 26px !important; font-weight: 700 !important; }
+.download-pill-main:hover, .download-pill-alt:hover { background: #25A77D !important; }
+.download-pill-divider { background: #0F6C51 !important; width: 1px !important; }
+
+.download-dropdown-menu {
+    background: #17231F !important;
+    border: 1px solid #3D564B !important;
+    padding: 0 !important;
+}
+.download-dropdown-item {
+    color: #C3D2CB !important;
+    padding: 10px 14px !important;
+    font-weight: 600 !important;
+}
+.download-dropdown-item + .download-dropdown-item {
+    border-top: 1px solid #24352C !important;
+    margin-top: 0 !important;
+}
+.download-dropdown-item:hover { background: #17382E !important; color: #EFF5F2 !important; }
+.download-dropdown-item i,
+.download-dropdown-item:hover i { color: #25A77D !important; }
+.download-dropdown-item .meta,
+.download-dropdown-item .disabled-tag,
+.download-dropdown-item:hover .meta,
+.download-dropdown-item:hover .disabled-tag { color: #7A8A83 !important; }
+
+.download-note { color: #7A8A83 !important; margin-bottom: 36px !important; }
+.download-info-grid { gap: 14px !important; }
+/* --- footer ------------------------------------------------------------- */
+
+footer {
+    background: #0F1512 !important;
+    border-top: 1px solid #2E4239 !important;
+    color: #7A8A83 !important;
+    padding: 28px 0 !important;
+}
+footer a { color: #A9BAB2 !important; }
+footer a:hover { color: #25A77D !important; }
+.legal-fineprint { color: #5E6F68 !important; }
+
+/* --- inline code -------------------------------------------------------- */
+
+code {
+    background: #14201B !important;
+    border: 1px solid #2E4239 !important;
+    color: #25A77D !important;
+    padding: 2px 6px !important;
+    font-weight: 500 !important;
+}
+
+/* --- legal pages: one framed sheet -------------------------------------- */
+
+html.page-en-terms body, html.page-en-privacy body,
+html.page-ru-terms body, html.page-ru-privacy body,
+html.page-he-terms body, html.page-he-privacy body,
+html.page-ja-terms body, html.page-ja-privacy body {
+    background: #101714 !important;
+    color: #C3D2CB !important;
+    padding: 40px 20px !important;
+}
+
+html.page-en-terms body > .container, html.page-en-privacy body > .container,
+html.page-ru-terms body > .container, html.page-ru-privacy body > .container,
+html.page-he-terms body > .container, html.page-he-privacy body > .container,
+html.page-ja-terms body > .container, html.page-ja-privacy body > .container {
+    max-width: 840px !important;
+    padding: 34px 36px !important;
+    background: #17231F !important;
+    border: 1px solid #2E4239 !important;
+    border-top-color: #3D564B !important;
+}
+
+[class*="-terms"] h1, [class*="-privacy"] h1 {
+    color: #EFF5F2 !important;
+    font-size: 1.8rem !important;
+    letter-spacing: -0.01em !important;
+}
+[class*="-terms"] h2, [class*="-privacy"] h2 {
+    color: #25A77D !important;
+    font-size: 1.15rem !important;
+    margin-top: 28px !important;
+    padding-bottom: 6px !important;
+    border-bottom: 1px solid #24352C !important;
+}
+[class*="-terms"] p, [class*="-terms"] li,
+[class*="-privacy"] p, [class*="-privacy"] li { color: #C3D2CB !important; }
+[class*="-terms"] strong, [class*="-privacy"] strong { color: #EFF5F2 !important; }
+[class*="-terms"] a, [class*="-privacy"] a { color: #25A77D !important; }
+[class*="-terms"] a:hover, [class*="-privacy"] a:hover { color: #3FB894 !important; }
+[class*="-terms"] .last-updated, [class*="-privacy"] .last-updated { color: #7A8A83 !important; }
+[class*="-terms"] footer, [class*="-privacy"] footer {
+    color: #7A8A83 !important;
+    border-top: 1px solid #2E4239 !important;
+    border-color: #2E4239 !important;
+    margin-top: 40px !important;
+    padding-top: 18px !important;
+}
+[class*="-terms"] .back-link, [class*="-privacy"] .back-link {
+    display: inline-block !important;
+    border: 1px solid #2E4239 !important;
+    background: #14201B !important;
+    color: #A9BAB2 !important;
+    padding: 6px 12px !important;
+    margin-bottom: 22px !important;
+    font-weight: 600 !important;
+}
+[class*="-terms"] .back-link:hover, [class*="-privacy"] .back-link:hover {
+    border-color: #168B68 !important;
+    color: #25A77D !important;
+}
+[class*="-terms"] .highlight, [class*="-privacy"] .highlight {
+    background: #14201B !important;
+    border: 1px solid #2E4239 !important;
+    border-left: 2px solid #168B68 !important;
+    padding: 14px 16px !important;
+    margin: 20px 0 !important;
+}
+
+/* --- buttons: outrank the per-language !important labels ---------------- */
+
+:is(.page-en, .page-ru, .page-ja, .page-he) .btn {
+    color: #F3FBF7 !important;
+}
+:is(.page-en, .page-ru, .page-ja, .page-he) .btn:hover,
+:is(.page-en, .page-ru, .page-ja, .page-he) .btn:active {
+    color: #F3FBF7 !important;
+}
+:is(.page-en, .page-ru, .page-ja, .page-he) .btn-outline {
+    color: #EFF5F2 !important;
+}
+:is(.page-en, .page-ru, .page-ja, .page-he) .btn-outline:hover {
+    color: #EFF5F2 !important;
+}
+
+/* --- small screens ------------------------------------------------------ */
+
+@media (max-width: 720px) {
+    .hero { padding: 40px 16px 48px !important; }
+    .hero-content { padding: 32px 20px 28px !important; }
+    .hero h1 { font-size: 2rem !important; }
+    .download-section { padding: 56px 16px 52px !important; }
+    .download-section h2 { font-size: 1.7rem !important; }
+    .download-pill { width: 100% !important; }
+    header .container { gap: 10px !important; }
+    html.page-en-terms body > .container, html.page-en-privacy body > .container,
+    html.page-ru-terms body > .container, html.page-ru-privacy body > .container,
+    html.page-he-terms body > .container, html.page-he-privacy body > .container,
+    html.page-ja-terms body > .container, html.page-ja-privacy body > .container {
+        padding: 22px 18px !important;
+    }
+}
