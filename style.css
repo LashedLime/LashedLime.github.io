@@ -3477,6 +3477,7 @@ body > footer { flex: 0 0 auto !important; }
 }
 
 /* --- type: Minecraft-style pixel face ----------------------------------- */
+/* Orvex Pixel = Pixelify Sans (SIL Open Font License 1.1) - see resource/fonts/OFL.txt */
 
 @font-face {
     font-family: "Orvex Pixel";
