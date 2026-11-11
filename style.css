@@ -3091,7 +3091,7 @@ nav a:hover {
 /* --- hero: a single client window --------------------------------------- */
 
 .hero {
-    min-height: auto !important;
+    min-height: 100vh !important;
     padding: 72px 24px 64px !important;
     background: #101714 !important;
 }
@@ -3470,3 +3470,8 @@ body > footer { flex: 0 0 auto !important; }
 
 /* The glow pseudo-elements are gone, so nothing needs clipping any more. */
 .hero, .download-section { overflow: visible !important; }
+
+/* Full-viewport hero that still respects mobile browser chrome. */
+@supports (min-height: 100svh) {
+    .hero { min-height: 100svh !important; }
+}
